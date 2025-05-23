@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://h8w0epkd3g5p"
+path="res://.godot/imported/support-two-top-double.obj-4557c8535d54d9608fc87a2ba0a3e0c0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/support-two-top-double.obj-4557c8535d54d9608fc87a2ba0a3e0c0.mesh"]
+
+source_file="res://assets/kenney_marble-kit/Models/OBJ format/support-two-top-double.obj"
+dest_files=["res://.godot/imported/support-two-top-double.obj-4557c8535d54d9608fc87a2ba0a3e0c0.mesh", "res://.godot/imported/support-two-top-double.obj-4557c8535d54d9608fc87a2ba0a3e0c0.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://coxafi4b52odc"]
+
+[ext_resource type="Script" uid="uid://cr8qgsi12eexm" path="res://addons/godot_tours/godot_tour_list.gd" id="1_list"]
+[ext_resource type="Script" uid="uid://cu47whb40hxkc" path="res://addons/godot_tours/godot_tour_entry.gd" id="2_entry"]
+
+[sub_resource type="Resource" id="TourVR01"]
+script = ExtResource("2_entry")
+title = "Un guide sur Godot VR"
+is_free = true
+is_locked = false
+tour_path = "res://tours/vr_tour.gd"
+
+[resource]
+script = ExtResource("1_list")
+tours = [SubResource("TourVR01")]

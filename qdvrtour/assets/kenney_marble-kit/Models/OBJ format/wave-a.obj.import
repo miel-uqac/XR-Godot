@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://68wori87se61"
+path="res://.godot/imported/wave-a.obj-27be78a4547a7c0379f8d3522cd73799.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wave-a.obj-27be78a4547a7c0379f8d3522cd73799.mesh"]
+
+source_file="res://assets/kenney_marble-kit/Models/OBJ format/wave-a.obj"
+dest_files=["res://.godot/imported/wave-a.obj-27be78a4547a7c0379f8d3522cd73799.mesh", "res://.godot/imported/wave-a.obj-27be78a4547a7c0379f8d3522cd73799.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
