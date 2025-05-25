@@ -1,6 +1,34 @@
-[gd_scene format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=7 format=3 uid="uid://d0pbwebxsvho0"]
+
+[ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_cutfq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_wl86v"]
+sky_material = SubResource("ProceduralSkyMaterial_ieq6j")
+
+[sub_resource type="Environment" id="Environment_n0trf"]
+background_mode = 2
+sky = SubResource("Sky_wl86v")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_tf0us"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ykw7r"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Circuit" type="Node3D"]
+script = ExtResource("1_cutfq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n0trf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
@@ -8,7 +36,15 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
 tracker = &"left_hand"
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
+mesh = SubResource("BoxMesh_tf0us")
+
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
 tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController"]
+mesh = SubResource("BoxMesh_ykw7r")
