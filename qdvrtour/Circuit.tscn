@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=16 format=3 uid="uid://d0pbwebxsvho0"]
 
 [ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_cutfq"]
+[ext_resource type="PackedScene" uid="uid://bexkvuwgjilbd" path="res://Objects/sphere.tscn" id="2_ieq6j"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_wl86v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -20,6 +22,26 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="BoxMesh" id="BoxMesh_ykw7r"]
 size = Vector3(0.1, 0.1, 0.1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ieq6j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wl86v"]
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0trf"]
+albedo_color = Color(0.0588235, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ofq8x"]
+material = SubResource("StandardMaterial3D_n0trf")
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieq6j"]
+albedo_color = Color(0, 0.364706, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wl86v"]
+material = SubResource("StandardMaterial3D_ieq6j")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0trf"]
+
 [node name="Circuit" type="Node3D"]
 script = ExtResource("1_cutfq")
 
@@ -36,15 +58,41 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
 mesh = SubResource("BoxMesh_tf0us")
 
+[node name="FunctionPickup" parent="XROrigin3D/LeftController" instance=ExtResource("2_wl86v")]
+
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController"]
 mesh = SubResource("BoxMesh_ykw7r")
+
+[node name="FunctionPickup" parent="XROrigin3D/RightController" instance=ExtResource("2_wl86v")]
+
+[node name="Sphere" parent="." instance=ExtResource("2_ieq6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010904, 1.38765, -0.970892)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ieq6j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_wl86v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ofq8x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569567, -1.1443)
+mesh = SubResource("BoxMesh_wl86v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560245, -1.13855)
+shape = SubResource("BoxShape3D_n0trf")

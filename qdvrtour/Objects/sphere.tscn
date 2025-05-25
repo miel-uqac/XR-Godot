@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bexkvuwgjilbd"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ckoqq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lqwev"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f1liq"]
+radius = 0.1
+height = 0.2
+
+[node name="Sphere" instance=ExtResource("1_ckoqq")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("CapsuleShape3D_lqwev")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("CapsuleMesh_f1liq")
