@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d13b30f7e551k"
-path.s3tc="res://.godot/imported/colormap.png-8a4883ce4b4d3802a13a7cf56464981a.s3tc.ctex"
+path.etc2="res://.godot/imported/colormap.png-8a4883ce4b4d3802a13a7cf56464981a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/kenney_marble-kit/Models/GLB format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-8a4883ce4b4d3802a13a7cf56464981a.s3tc.ctex"]
+dest_files=["res://.godot/imported/colormap.png-8a4883ce4b4d3802a13a7cf56464981a.etc2.ctex"]
 
 [params]
 
