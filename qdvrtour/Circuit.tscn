@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=18 format=3 uid="uid://d0pbwebxsvho0"]
 
-[ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_cutfq"]
+[ext_resource type="Script" path="res://circuit.gd" id="1_cutfq"]
 [ext_resource type="PackedScene" uid="uid://bexkvuwgjilbd" path="res://Objects/sphere.tscn" id="2_ieq6j"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_wl86v"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_tf0us"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_ykw7r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -62,18 +64,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController"]
+visible = false
 mesh = SubResource("BoxMesh_tf0us")
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftController" instance=ExtResource("2_wl86v")]
+
+[node name="LeftHand" parent="XROrigin3D/LeftController" instance=ExtResource("3_tf0us")]
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController"]
+visible = false
 mesh = SubResource("BoxMesh_ykw7r")
 
 [node name="FunctionPickup" parent="XROrigin3D/RightController" instance=ExtResource("2_wl86v")]
+
+[node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("4_ykw7r")]
 
 [node name="Sphere" parent="." instance=ExtResource("2_ieq6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010904, 1.38765, -0.970892)

@@ -19,13 +19,18 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout=""
 
+[autoload]
+
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_tours/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
 
-[internationalization]
+[filesystem]
 
-locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://tours/vr_tour.gd")
+import/blender/enabled=false
 
 [rendering]
 
