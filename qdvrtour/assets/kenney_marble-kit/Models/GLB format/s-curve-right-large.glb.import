@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/s-curve-right-large.glb-07ef082b4fe6186c9f1f5
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="StaticBody3D"
+nodes/root_name="s-curve-R"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

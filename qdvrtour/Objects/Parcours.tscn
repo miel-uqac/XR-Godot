@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjba7kqpxi506"]
+
+[ext_resource type="PackedScene" uid="uid://crvndq8ra826t" path="res://Objects/Parties-Circuit/Helix.tscn" id="1_ipgky"]
+[ext_resource type="PackedScene" uid="uid://c7dg1rd1f0vt5" path="res://Objects/Parties-Circuit/Ramp.tscn" id="2_s8a32"]
+[ext_resource type="PackedScene" uid="uid://c4ycqqpef8w3j" path="res://Objects/Parties-Circuit/s_curve_r-large.tscn" id="3_le1ri"]
+[ext_resource type="PackedScene" uid="uid://4nggrj3isij5" path="res://Objects/Parties-Circuit/S_Curve.tscn" id="4_le1ri"]
+[ext_resource type="PackedScene" uid="uid://c74a21f3eyuyc" path="res://Objects/Parties-Circuit/Slope.tscn" id="5_db1km"]
+[ext_resource type="PackedScene" uid="uid://f6jmls37oud6" path="res://Objects/Parties-Circuit/Curve.tscn" id="6_qbv30"]
+
+[node name="Parcours" type="Node3D"]
+
+[node name="helix" parent="." instance=ExtResource("1_ipgky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36046, 1.51206, -1)
+
+[node name="ramp" parent="." instance=ExtResource("2_s8a32")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.36046, 3.51206, 1.50555)
+
+[node name="s-curve-R-Large" parent="." instance=ExtResource("3_le1ri")]
+transform = Transform3D(0.0668834, 0, 0.997761, 0, 1, 0, -0.997761, 0, 0.0668834, 9.65696, 3.76262, 4.15914)
+
+[node name="s-curve-R-Large2" parent="." instance=ExtResource("3_le1ri")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.884, 1.51619, -0.995)
+
+[node name="S-Curve" parent="." instance=ExtResource("4_le1ri")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.08201, 1.52204, -2.00988)
+
+[node name="Slope" parent="." instance=ExtResource("5_db1km")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.57562, 0.023, -0.505)
+
+[node name="Curve" parent="." instance=ExtResource("6_qbv30")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.54779, 0, -0.998885)
+
+[node name="Curve2" parent="." instance=ExtResource("6_qbv30")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.55279, 0, -2.99803)
+
+[node name="s-curve-R-Large3" parent="." instance=ExtResource("3_le1ri")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.11111, 0, -0.990072)
+
+[node name="Slope2" parent="." instance=ExtResource("5_db1km")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.37853, -1.49058, 1.50251)
+
+[node name="Slope3" parent="." instance=ExtResource("5_db1km")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.9525, 3.77538, 6.80763)
+
+[node name="helix2" parent="." instance=ExtResource("1_ipgky")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.3719, -3.48761, 4.00244)
+
+[node name="Curve3" parent="." instance=ExtResource("6_qbv30")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.35127, -3.48455, 1.99935)

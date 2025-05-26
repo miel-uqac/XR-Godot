@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/helix-large-left.glb-c8c938b74a8affd23035b33f
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="StaticBody3D"
+nodes/root_name="helix"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false

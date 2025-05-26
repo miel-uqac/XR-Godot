@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=19 format=3 uid="uid://d0pbwebxsvho0"]
 
-[ext_resource type="Script" path="res://circuit.gd" id="1_cutfq"]
+[ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_cutfq"]
 [ext_resource type="PackedScene" uid="uid://bexkvuwgjilbd" path="res://Objects/sphere.tscn" id="2_ieq6j"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_wl86v"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_tf0us"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_ykw7r"]
+[ext_resource type="PackedScene" uid="uid://bjba7kqpxi506" path="res://Objects/Parcours.tscn" id="6_ykw7r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -98,9 +99,12 @@ mesh = SubResource("BoxMesh_ofq8x")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569567, -1.1443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48704, 0.569567, -1.1443)
 mesh = SubResource("BoxMesh_wl86v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560245, -1.13855)
 shape = SubResource("BoxShape3D_n0trf")
+
+[node name="Parcours" parent="." instance=ExtResource("6_ykw7r")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0979081, 0.637379, -0.70562)
