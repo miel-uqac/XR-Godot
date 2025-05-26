@@ -85,7 +85,7 @@ mesh = SubResource("BoxMesh_ykw7r")
 [node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("4_ykw7r")]
 
 [node name="Sphere" parent="." instance=ExtResource("2_ieq6j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010904, 1.38765, -0.970892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.595485, 1.38765, 0.596912)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_ieq6j")
@@ -97,13 +97,12 @@ shape = SubResource("BoxShape3D_wl86v")
 mesh = SubResource("BoxMesh_ofq8x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26418, 0, 0.1144)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48704, 0.569567, -1.1443)
 mesh = SubResource("BoxMesh_wl86v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560245, -1.13855)
 shape = SubResource("BoxShape3D_n0trf")
 
 [node name="Parcours" parent="." instance=ExtResource("6_ykw7r")]
