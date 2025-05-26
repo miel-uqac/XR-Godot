@@ -86,6 +86,7 @@ mesh = SubResource("BoxMesh_ykw7r")
 
 [node name="Sphere" parent="." instance=ExtResource("2_ieq6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.595485, 1.38765, 0.596912)
+gravity_scale = 0.3
 
 [node name="Ground" type="StaticBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_ieq6j")
