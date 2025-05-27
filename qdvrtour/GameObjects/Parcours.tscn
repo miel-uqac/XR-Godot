@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjba7kqpxi506"]
 
-[ext_resource type="PackedScene" uid="uid://crvndq8ra826t" path="res://Objects/Parties-Circuit/Helix.tscn" id="1_ipgky"]
-[ext_resource type="PackedScene" uid="uid://c7dg1rd1f0vt5" path="res://Objects/Parties-Circuit/Ramp.tscn" id="2_s8a32"]
-[ext_resource type="PackedScene" uid="uid://c4ycqqpef8w3j" path="res://Objects/Parties-Circuit/s_curve_r-large.tscn" id="3_le1ri"]
-[ext_resource type="PackedScene" uid="uid://4nggrj3isij5" path="res://Objects/Parties-Circuit/S_Curve.tscn" id="4_le1ri"]
-[ext_resource type="PackedScene" uid="uid://c74a21f3eyuyc" path="res://Objects/Parties-Circuit/Slope.tscn" id="5_db1km"]
-[ext_resource type="PackedScene" uid="uid://f6jmls37oud6" path="res://Objects/Parties-Circuit/Curve.tscn" id="6_qbv30"]
+[ext_resource type="PackedScene" uid="uid://crvndq8ra826t" path="res://GameObjects/Circuit-Parts/Helix.tscn" id="1_ipgky"]
+[ext_resource type="PackedScene" uid="uid://c7dg1rd1f0vt5" path="res://GameObjects/Circuit-Parts/Ramp.tscn" id="2_s8a32"]
+[ext_resource type="PackedScene" uid="uid://c4ycqqpef8w3j" path="res://GameObjects/Circuit-Parts/s_curve_r-large.tscn" id="3_le1ri"]
+[ext_resource type="PackedScene" uid="uid://4nggrj3isij5" path="res://GameObjects/Circuit-Parts/S_Curve.tscn" id="4_le1ri"]
+[ext_resource type="PackedScene" uid="uid://c74a21f3eyuyc" path="res://GameObjects/Circuit-Parts/Slope.tscn" id="5_db1km"]
+[ext_resource type="PackedScene" uid="uid://f6jmls37oud6" path="res://GameObjects/Circuit-Parts/Curve.tscn" id="6_qbv30"]
 
 [node name="Parcours" type="Node3D"]
 
