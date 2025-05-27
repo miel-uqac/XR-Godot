@@ -5,8 +5,9 @@ class_name ColorChange
 extends XRToolsPickable
 
 #Couleurs extremes que prendra la bille a vitesse maximale et à l'arret
-@export var fastColor : Color = Color(1,0,0)
-@export var slowColor : Color = Color(0,1,0)
+#Exemple de déclaration de couleur 
+#var variable_name : Color = Color(1,1,1)
+
 #Reference du mesh de la sphère
 @onready var mesh3D : MeshInstance3D = $MeshInstance3D
 #Maximum speed expected
@@ -18,5 +19,5 @@ func _physics_process(delta: float) -> void:
 	#On va calculer la valeur utilisée dans l'interpolation à l'aide de la vitesse de la balle
 	var interp_value = clamp(linear_velocity.length(), 0, maxSpeed)/maxSpeed
 	#on change la couleur du materiau par l'interpolation entre les deux couleurs
-	material.albedo_color = slowColor.lerp(fastColor, interp_value)
+	material.albedo_color = Color(0,1,0).lerp(Color(1,0,0), interp_value)
 	
