@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=15 format=3 uid="uid://d0pbwebxsvho0"]
 
 [ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_272bh"]
@@ -35,14 +35,6 @@ albedo_color = Color(0.0588235, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ofq8x"]
 material = SubResource("StandardMaterial3D_n0trf")
 size = Vector3(50, 0.1, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieq6j"]
-albedo_color = Color(0, 0.364706, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_wl86v"]
-material = SubResource("StandardMaterial3D_ieq6j")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n0trf"]
 
 [node name="Circuit" type="Node3D"]
 script = ExtResource("1_7mycd")
@@ -91,15 +83,6 @@ shape = SubResource("BoxShape3D_wl86v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
 mesh = SubResource("BoxMesh_ofq8x")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26418, 0, 0.1144)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_wl86v")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_n0trf")
 
 [node name="Parcours" parent="." instance=ExtResource("6_efxa6")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0979081, 0.637379, -0.70562)
