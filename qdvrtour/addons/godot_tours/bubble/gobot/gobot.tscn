@@ -917,7 +917,7 @@ texture = ExtResource("9_2wekc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport"]
 libraries = {
-"": SubResource("AnimationLibrary_axgnh")
+&"": SubResource("AnimationLibrary_axgnh")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="SubViewportContainer/SubViewport"]

@@ -44,6 +44,7 @@ func _build() -> void:
 	)
 
 	steps_intro()
+	steps_add_child()
 	steps_conclusion()
 
 
@@ -67,7 +68,6 @@ func steps_intro() -> void:
 	queue_command(func avatar_wink(): bubble.avatar.do_wink())
 	complete_step()
 
-
 	# 0020: First look at game you'll make
 	highlight_controls([interface.run_bar_play_button], true)
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
@@ -80,9 +80,54 @@ func steps_intro() -> void:
 	)
 	complete_step()
 
+func steps_add_child() -> void:
+	# 0030: Start of editor tour
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Ajoutons une bille"))
+	bubble_add_text(
+		[gtr("Nous allons maintenant ajouter une bille au jeu"),]
+	)
+	complete_step()
+
+
+	# 0040: central viewport
+	highlight_controls([interface.spatial_editor])
+	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.BOTTOM_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Visualisation de la scène actuelle"))
+	bubble_add_text(
+		[gtr("Au centre de l'éditeur se trouve le viewport qui montre la [b]scene[/b] actuelle."),]
+	)
+	complete_step()
+
+	# 0041: Adding a child to scene, folders
+	highlight_controls([interface.scene_dock])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Représentation de la scène"))
+	bubble_add_text(
+		[gtr("Dans l'éditeur une fenêtre permet d'afficher les différents objets présent dans la scène actuelle"),
+		gtr("Ces objets sont organisé sous forme d'arbre avec des noeuds aux responsabilité bien définies")]
+	)
+	complete_step()
+
+	# 0041: Adding a child to scene, folders
+	var controls_0041: Array[Control] = []
+	
+	
+	highlight_controls([interface.scene_dock_instanciate_scene_button])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Représentation de la scène"))
+	bubble_add_text(
+		[gtr("Dans l'éditeur une fenêtre permet d'afficher les différents objets présent dans la scène actuelle"),
+		gtr("Ces objets sont organisé sous forme d'arbre avec des noeuds aux responsabilité bien définies")]
+	)
+	complete_step()
+
 
 func steps_conclusion() -> void:
-
 	context_set_2d()
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
