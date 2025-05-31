@@ -104,7 +104,7 @@ func steps_add_child() -> void:
 	# 0041: Adding a child to scene, folders
 	highlight_controls([interface.scene_dock])
 	print(interface.scene_dock)
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Représentation de la scène"))
 	bubble_add_text(
@@ -119,13 +119,14 @@ func steps_add_child() -> void:
 	
 	highlight_controls([interface.scene_dock_instanciate_scene_button])
 	print(interface.scene_dock_instanciate_scene_button)
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Instancier la une scène enfant"))
 	bubble_add_text(
-		[gtr("Comme nous avons déjà créer l'objet (une scène lui aussi) que nous voulons ajouter il nous suffit de cliquer sur \"instancier une scène enfant\""),
-		gtr("ets sont organisé sous forme d'arbre avec des noeuds aux responsabilité bien définies")]
+		[gtr("Comme nous avons déjà créer l'objet (une scène lui aussi) que nous voulons ajouter il nous suffit de cliquer sur \"instancier une scène enfant\""),]
 	)
+	mouse_move_by_position(interface.spatial_editor.global_position,interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
+	mouse_click(3)
 	complete_step()
 
 
