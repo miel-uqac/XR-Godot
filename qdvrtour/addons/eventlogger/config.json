@@ -1,0 +1,16 @@
+{
+	"BaseButton": {
+		"button_up": false,
+		"pressed": true
+	},
+	"ColorPickerButton": {
+		"popup_closed": true
+	},
+	"EditorSpinSlider": {
+		"ungrabbed": true,
+		"value_focus_exited": true
+	},
+	"TextEdit": {
+		"text_changed": true
+	}
+}
