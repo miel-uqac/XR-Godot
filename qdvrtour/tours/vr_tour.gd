@@ -51,7 +51,7 @@ func _build() -> void:
 func steps_intro() -> void:
 
 	# 0010: introduction
-	context_set_2d()
+	context_set_3d()
 	scene_open(scene_main)
 	bubble_move_and_anchor(interface.base_control, Bubble.At.CENTER)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
@@ -60,7 +60,7 @@ func steps_intro() -> void:
 	bubble_set_title("")
 	bubble_add_text([bbcode_wrap_font_size(gtr("[center][b]Bienvenue dans Godot[/b][/center]"), 32)])
 	bubble_add_text(
-		[gtr("[center]Dans ce tutoriel, vous serez amener à découvrir [b]l'éditeur Godot[/b].[/center]"),
+		[gtr("[center]Dans ce tutoriel, vous serez amené à découvrir [b]l'éditeur Godot[/b].[/center]"),
 		gtr("[center]Vous allez modifier un projet existant afin de découvrir les fonctionalités.[/center]"),
 		gtr("[center][b]C'est parti![/b][/center]"),]
 	)
@@ -86,7 +86,7 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Ajoutons une bille"))
 	bubble_add_text(
-		[gtr("Nous allons maintenant ajouter une bille au jeu"),]
+		[gtr("Nous allons maintenant ajouter une bille au jeu."),]
 	)
 	complete_step()
 
@@ -97,7 +97,7 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Visualisation de la scène actuelle"))
 	bubble_add_text(
-		[gtr("Au centre de l'éditeur se trouve le viewport qui montre la [b]scene[/b] actuelle."),]
+		[gtr("Au centre de l'éditeur se trouve le viewport qui montre la [b]scène[/b] actuelle."),]
 	)
 	complete_step()
 
@@ -108,8 +108,8 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Représentation de la scène"))
 	bubble_add_text(
-		[gtr("Dans l'éditeur une fenêtre permet d'afficher les différents objets présent dans la scène actuelle"),
-		gtr("Ces objets sont organisé sous forme d'arbre avec des noeuds aux responsabilité bien définies")]
+		[gtr("Dans l'éditeur, une fenêtre permet d'afficher les différents objets présent dans la scène actuelle."),
+		gtr("Ces objets sont organisés sous forme d'arbre avec des noeuds aux responsabilités bien définies.")]
 	)
 	complete_step()
 
@@ -118,15 +118,19 @@ func steps_add_child() -> void:
 	
 	
 	highlight_controls([interface.scene_dock_instanciate_scene_button])
-	print(interface.scene_dock_instanciate_scene_button)
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
-	bubble_set_title(gtr("Instancier la une scène enfant"))
+	bubble_add_task_instantiate_scene("res://GameObjects/Bille.tscn", "Bille", "Circuit")
+	bubble_set_title(gtr("Instancier une scène enfant"))
 	bubble_add_text(
-		[gtr("Comme nous avons déjà créer l'objet (une scène lui aussi) que nous voulons ajouter il nous suffit de cliquer sur \"instancier une scène enfant\""),]
+		[gtr("Comme nous avons déjà créer l'objet [i]Bille.tscn[/i], qui est donc une scène lui aussi, nous pouvons l'ajouter à notre scène principal [i]main.tscn[/i]."),
+		 gtr("Pour cela, deux options s'offrent à vous. Soit vous glissez la scène depuis la fenètre du système de fichiers sur le noeud du circuit sachant qu'elle se trouve dans le dossier GameObjects."),
+		 gtr("Soit vous cliquez sur le noeud Circuit de la scène puis sur \"Instancier une scène enfant\" pour accèder à une fenêtre de sélection.")]
 	)
-	mouse_move_by_position(interface.spatial_editor.global_position,interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
-	mouse_click(3)
+	mouse_move_by_position(interface.spatial_editor.global_position, interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size)
+	mouse_click(1)
+	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
+	mouse_click(1)
 	complete_step()
 
 

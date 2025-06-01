@@ -36,7 +36,7 @@ script = ExtResource("5_xj53w")
 closed_pose = ExtResource("6_iry6i")
 metadata/_custom_type_script = "uid://c7bmf1yg60kmc"
 
-[node name="Sphere" instance=ExtResource("1_ckoqq")]
+[node name="Bille" instance=ExtResource("1_ckoqq")]
 physics_material_override = SubResource("PhysicsMaterial_iry6i")
 script = null
 

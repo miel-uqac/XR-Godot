@@ -717,6 +717,7 @@ func _init() -> void:
 		spatial_editor_toolbar_environment_button: ["spatial_editor_toolbar_environment_button", "PreviewEnvironment"],
 		spatial_editor_toolbar_sun_environment_button: ["spatial_editor_toolbar_sun_environment_button", "GuiTabMenuHl"],
 		scene_dock_add_button: ["scene_dock_add_button", "Add"],
+		scene_dock_instanciate_scene_button: ["scene_dock_instanciate_scene_button", "InstanciateScene"],
 		node_dock_signals_button: ["node_dock_signals_button", "Signals"],
 		node_dock_groups_button: ["node_dock_groups_button", "Groups"],
 		spriteframes_animation_toolbar_add_animation_button: ["spriteframes_animation_toolbar_add_animation_button", "New"],
