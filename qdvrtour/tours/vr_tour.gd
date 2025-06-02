@@ -112,10 +112,6 @@ func steps_add_child() -> void:
 		gtr("Ces objets sont organisés sous forme d'arbre avec des noeuds aux responsabilités bien définies.")]
 	)
 	complete_step()
-
-	# 0041: Adding a child to scene, folders
-	var controls_0041: Array[Control] = []
-	
 	
 	highlight_controls([interface.scene_dock_instanciate_scene_button])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
@@ -132,7 +128,35 @@ func steps_add_child() -> void:
 	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
 	mouse_click(1)
 	complete_step()
+	
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Déplacer la bille dans la scène"))
+	bubble_add_text(
+		[gtr("Maintenant que nous avons ajouté la bille à l'arborescence il suffit de clicker dessus pour pouvoir la manipuler dans la fenêtre centrale."),]
+	)
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit/Bille")),
+	)
+	mouse_click(1)
+	complete_step()
 
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Autre alternative"))
+	bubble_add_text(
+		[gtr(" Pour avoir un accès plus fin aux valeurs de position on peut les rentrer numériquement dans l'inspecteur de la bille"),]
+	)
+
+func step_modify_bille():
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr(""))
+	bubble_add_text(
+		[gtr("Nous allons maintenant ajouter une bille au jeu."),]
+	)
+	complete_step()
 
 func steps_conclusion() -> void:
 	context_set_2d()
