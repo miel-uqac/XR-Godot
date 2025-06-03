@@ -2,6 +2,7 @@
 extends EditorPlugin
 
 var tree_dock: VBoxContainer
+var search_bar: LineEdit
 var tree_view: Tree
 
 var eye_icon_visible : Texture2D
@@ -13,7 +14,7 @@ var icons : Dictionary = {}
 
 func _enter_tree():
 	call_deferred("on_editor_ready")
-	
+
 func on_editor_ready():
 	icons["Node"] = EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 	highlight_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -25,6 +26,13 @@ func on_editor_ready():
 	eye_icon_hidden = EditorInterface.get_editor_theme().get_icon("GuiVisibilityHidden", "EditorIcons")
 	# Create bottom dock tab
 	tree_dock = VBoxContainer.new()
+	
+	# Create the search bar
+	search_bar = LineEdit.new()
+	search_bar.placeholder_text = "Search nodes by name..."
+	search_bar.text_changed.connect(_on_search_changed)
+	tree_dock.add_child(search_bar)
+	
 	tree_dock.name = "Editor Tree Container"
 
 	# Add tree view
@@ -41,6 +49,8 @@ func on_editor_ready():
 	add_control_to_bottom_panel(tree_dock, "Editor Tree")
 	# Build initial tree
 	make_editor_tree()
+
+
 
 func _exit_tree():
 	remove_control_from_bottom_panel(tree_dock)
@@ -167,6 +177,35 @@ func update_tree(item: TreeItem, parent_visible : bool) -> void:
 	for child_node in node.get_children():
 		if not(child_node in seen_node) :
 			add_tree_items(child_node, item)
+
+func _reveal_item(item: TreeItem):
+	# Unfold all parents so the item is visible
+	var parent = item.get_parent()
+	while parent:
+		parent.collapsed = false
+		parent = parent.get_parent()
+
+func _on_search_changed(search_text: String):
+	if search_text.is_empty():
+		return
+	
+	var root = tree_view.get_root()
+	if not root:
+		return
+	
+	var queue = [root]
+	while queue.size() > 0:
+		var item = queue.pop_front()
+		var name = item.get_text(0)
+		
+		if name.to_lower().begins_with(search_text.to_lower()):
+			# Found the first match
+			_reveal_item(item)
+			tree_view.scroll_to_item(item)
+			return
+	
+		for i in range(item.get_child_count()):
+			queue.append(item.get_child(i))
 
 func _process(_delta: float) -> void:
 	update_tree(tree_view.get_root().get_child(0), true)
