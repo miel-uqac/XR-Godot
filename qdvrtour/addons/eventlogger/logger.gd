@@ -59,7 +59,9 @@ func _on_record_button_toggled():
 	if is_recording:
 		recording_start_time = Time.get_ticks_msec() / 1000.0
 		log_count = get_file_count_in_folder(log_folder_path)
-		var file := FileAccess.open(log_folder_path + "log_" + str(log_count) + ".txt", FileAccess.WRITE)
+		var file := FileAccess.open(log_folder_path + "log_" + str(log_count) + ".csv", FileAccess.WRITE)
+		file.seek_end()
+		file.store_line("Timestamp,ClassName,Signal,NodeName,NodeTag")
 		file.close()
 		record_button.text = "🔴 Recording"
 	else:
@@ -274,12 +276,12 @@ func _on_signal_logged(arg1: Variant=null, arg2: Variant=null, arg3: Variant=nul
 	var node : Node = arg3
 	
 	var timestamp = _format_timestamp()
-	log_to_file("[" + timestamp + "]" + "[" + _class_name + "] " + signal_name + " : " + node.name + " : " + get_node_name(node))
+	log_to_file(timestamp + "," + _class_name + "," + signal_name + "," + node.name + "," + get_node_name(node))
 	if print_to_console :
 		print("[" + timestamp + "]" + "[" + _class_name + "] " + signal_name + " : " + node.name + " : " + get_node_name(node))
 
 func log_to_file(text: String):
-	var file := FileAccess.open(log_folder_path + "log_" + str(log_count) + ".txt", FileAccess.READ_WRITE)
+	var file := FileAccess.open(log_folder_path + "log_" + str(log_count) + ".csv", FileAccess.READ_WRITE)
 	file.seek_end()
 	file.store_line(text)
 	file.close()
