@@ -114,6 +114,7 @@ func steps_add_child() -> void:
 	complete_step()
 	
 	highlight_controls([interface.scene_dock_instanciate_scene_button])
+	highlight_scene_nodes_by_name(["Circuit"])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_add_task_instantiate_scene("res://GameObjects/Bille.tscn", "Bille", "Circuit")
@@ -133,7 +134,7 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Déplacer la bille dans la scène"))
 	bubble_add_text(
-		[gtr("Maintenant que nous avons ajouté la bille à l'arborescence il suffit de clicker dessus pour pouvoir la manipuler dans la fenêtre centrale."),]
+		[gtr("Maintenant que nous avons ajouté la bille à l'arborescence, il suffit de clicker dessus pour pouvoir la manipuler dans le viewport."),]
 	)
 	mouse_move_by_callable(
 		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit")),
@@ -146,8 +147,9 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Autre alternative"))
 	bubble_add_text(
-		[gtr(" Pour avoir un accès plus fin aux valeurs de position on peut les rentrer numériquement dans l'inspecteur de la bille"),]
+		[gtr("Pour avoir un accès plus fin aux valeurs de position, on peut les rentrer numériquement dans l'inspecteur de la bille."),]
 	)
+	complete_step()
 
 func step_modify_bille():
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)

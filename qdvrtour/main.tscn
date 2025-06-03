@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=15 format=3 uid="uid://d0pbwebxsvho0"]
 
 [ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_kek77"]
-[ext_resource type="PackedScene" uid="uid://bexkvuwgjilbd" path="res://GameObjects/Bille.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bjba7kqpxi506" path="res://GameObjects/Parcours.tscn" id="6_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
@@ -87,6 +86,3 @@ mesh = SubResource("BoxMesh_ofq8x")
 
 [node name="Parcours" parent="." instance=ExtResource("6_efxa6")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0979081, 0.637379, -0.70562)
-
-[node name="Bille" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65294, 1.04572, -1.92334)
