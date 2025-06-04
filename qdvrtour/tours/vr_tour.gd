@@ -45,7 +45,8 @@ func _build() -> void:
 
 	steps_intro()
 	steps_add_child()
-	steps_edit_subscene();
+	steps_edit_subscene()
+	steps_script()
 	steps_conclusion()
 
 
@@ -131,7 +132,7 @@ func steps_add_child() -> void:
 	mouse_click(1)
 	complete_step()
 	
-	highlight_controls([interface.scene_dock, interface.spatial_editor])
+	highlight_controls([interface.scene_dock])
 	highlight_scene_nodes_by_name(["Bille"])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
@@ -152,7 +153,7 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Autre alternative"))
 	bubble_add_text(
 		[gtr("Pour avoir un accès plus fin aux valeurs de position, on peut les rentrer numériquement dans l'inspecteur de la bille."),
-		gtr("Dans Node3D>Transform>Position")]
+		gtr("Dans Node3D>Transform>Position.")]
 	)
 	complete_step()
 
@@ -162,7 +163,7 @@ func steps_add_child() -> void:
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("Présence en jeu"))
 	bubble_add_text(
-		[gtr("Si on relance le jeu on peut voir que la bille apparait bievement avant de traverser le sol."),]
+		[gtr("Si on relance le jeu, on peut voir que la bille apparaît brièvement avant de traverser le sol."),]
 	)
 	complete_step()
 
@@ -172,7 +173,7 @@ func steps_edit_subscene() :
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Ajouter une collision"))
 	bubble_add_text(
-		[gtr("Pour éviter que la bille traverse le sol et les autres objets de la scène nous allons lui ajouter une boite de collision (en particulier une sphère)"),]
+		[gtr("Pour éviter que la bille traverse le sol et les autres objets de la scène, nous allons lui ajouter une boîte de collision."),]
 	)
 	complete_step()
 	
@@ -181,9 +182,9 @@ func steps_edit_subscene() :
 	highlight_scene_nodes_by_path(["Circuit/Bille"])
 	bubble_set_title(gtr("Instance de Scène"))
 	bubble_add_text([
-		gtr("On peut voir que certains éléments de l'arbre comme [b]Bille[/b], ont un icon  [b]Ouvrir dans l'éditeur[/b] %s sur leur ligne.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
-		gtr("Cet icon indique que ce noeuds est une scène enfant. On peut instancier de multiples scènes enfant pour composer des scènes plus complexes."),
-		gtr("En appuyant sur l'icon [b]Ouvrir dans l'éditeur[/b] %s à côté du noeud [b]Bille[/b] nous allons pouvoir accéder et modifier la scène Bille") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
+		gtr("On peut voir que certains noeuds de l'arbre, comme [b]Bille[/b] ou encore [b]Parcours[/b], ont un icon [b]Ouvrir dans l'éditeur[/b] %s sur leur ligne.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
+		gtr("Cet icon indique que ce noeud est une scène enfant. On peut instancier de multiples scènes enfant pour composer des scènes plus complexes."),
+		gtr("En appuyant sur l'icon [b]Ouvrir dans l'éditeur[/b] %s à côté du noeud [b]Bille[/b] nous allons pouvoir accéder et modifier la scène Bille.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
 	])
 	bubble_add_task(
 		(gtr("Ouvrir la scène Bille.")),
@@ -196,14 +197,14 @@ func steps_edit_subscene() :
 	)
 	complete_step()
 
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	highlight_controls([interface.inspector_dock])
 	highlight_scene_nodes_by_path(["Bille/CollisionShape3D"])
 	bubble_set_title(gtr("Ajoutons la collision"))
 	bubble_add_text([
-		gtr("Si on clique sur CollisionShape3D , on peut voir l'attribut Shape dans l'éditeur"),
-		gtr("Nous allons choisir d'ajouter une SphereShape3D même si dans l'absolu une CapsuleShpae3D conviendrait aussi")
+		gtr("Si on clique sur CollisionShape3D, on peut voir l'attribut Shape dans l'éditeur."),
+		gtr("Nous allons ajouter une SphereShape3D même si dans l'absolu une CapsuleShape3D conviendrait aussi")
 	])
 	bubble_add_task(
 		(gtr("Ajouter une SphereShape3D.")),
@@ -221,7 +222,51 @@ func steps_edit_subscene() :
 			return 0 
 	)
 	complete_step()
+	
+	highlight_controls([interface.run_bar_play_button], true)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_add_task_press_button(interface.run_bar_play_button)
+	bubble_set_title(gtr("Vérification en jeu"))
+	bubble_add_text(
+		[gtr("Si vous placez la bille sur la piste, vous devriez la voir suivre le parcours."),]
+	)
+	complete_step()
 
+func steps_script() :
+	
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	bubble_set_title(gtr("Ajoutons un peu de couleur"))
+	bubble_add_text(
+		[gtr("Nous avons écrit un script permettant à la bille de changer de couleur en fonction de sa vitesse mais nous avons oublié de l'ajouter à la bille."),]
+	)
+	complete_step()
+	
+	highlight_controls([interface.scene_dock_attach_script_button,])
+	highlight_scene_nodes_by_name(["Bille"])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
+	#bubble_add_task_press_button(interface.scene_dock_attach_script_button)
+	bubble_set_title(gtr("Attacher un script à un noeud"))
+	bubble_add_text(
+		[gtr("Comme pour l'instanciation d'une scène enfant, nous pouvons attacher le script par drag & drop ou en passant par le bouton."),
+		 gtr("Pour la première solution, le script [i]ColorChange.gd[/i] se trouve dans le dossier GameObjects. Il vous suffit de le glisser sur le noeud [b]Bille[/b]"),
+		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié.")]
+	)
+	complete_step()
+
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	highlight_scene_nodes_by_path(["Circuit/Bille"])
+	bubble_set_title(gtr("Ouverture de script"))
+	bubble_add_text([
+		gtr("On peut voir que [b]Bille[/b] a un icon [b]Ouvrir le script[/b] %s sur sa ligne.") % bbcode_generate_icon_image_string(ICONS_MAP.script),
+		gtr("Cet icon indique que ce noeud a un script d'attaché."),
+		gtr("En appuyant sur l'icon [b]Ouvrir le script[/b] %s à côté du noeud [b]Bille[/b] nous allons pouvoir accéder et modifier le script qu'on vient d'attacher.") % bbcode_generate_icon_image_string(ICONS_MAP.script),
+	])
+	complete_step()
+	
 
 func steps_conclusion() -> void:
 	context_set_2d()

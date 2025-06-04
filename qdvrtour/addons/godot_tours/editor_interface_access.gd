@@ -115,6 +115,7 @@ var scene_tabs: TabBar = null
 var scene_dock: VBoxContainer = null
 var scene_dock_add_button: Button = null
 var scene_dock_instanciate_scene_button : Button = null
+var scene_dock_attach_script_button : Button = null
 var scene_tree: Tree = null
 var import_dock: VBoxContainer = null
 var select_node_window: ConfirmationDialog = null
@@ -440,6 +441,7 @@ func _init() -> void:
 	scene_dock = Utils.find_child_by_type(base_control, "SceneTreeDock")
 	scene_dock_add_button = scene_dock.get_child(0).get_child(0)
 	scene_dock_instanciate_scene_button = scene_dock.get_child(0).get_child(1)
+	scene_dock_attach_script_button = scene_dock.get_child(0).get_child(3)
 
 	node_create_window = Utils.find_child_by_type(scene_dock, "CreateDialog")
 	node_create_panel = Utils.find_child_by_type(node_create_window, "HSplitContainer")
