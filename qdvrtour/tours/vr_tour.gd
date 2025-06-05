@@ -243,7 +243,7 @@ func steps_script() :
 	)
 	complete_step()
 	
-	highlight_controls([interface.scene_dock_attach_script_button,])
+	highlight_controls([interface.scene_dock_attach_script_button,interface.script_editor_code_panel])
 	highlight_scene_nodes_by_name(["Bille"])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
@@ -251,8 +251,17 @@ func steps_script() :
 	bubble_set_title(gtr("Attacher un script à un noeud"))
 	bubble_add_text(
 		[gtr("Comme pour l'instanciation d'une scène enfant, nous pouvons attacher le script par drag & drop ou en passant par le bouton."),
-		 gtr("Pour la première solution, le script [i]ColorChange.gd[/i] se trouve dans le dossier GameObjects. Il vous suffit de le glisser sur le noeud [b]Bille[/b]"),
-		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié.")]
+		 gtr("Pour la première solution, le script [b]ColorChange.gd[/b] se trouve dans le dossier GameObjects. Il vous suffit de le glisser sur le noeud [b]Bille[/b]"),
+		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié. Dedans au lieu de creer un nouveau scirpt on parcours les fichiers pour trouver celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : [b]res://GameObjects/ColorChange.gd[/b])")]
+	)
+	bubble_add_task(
+		(gtr("Ajouter le script ColorChange")),
+		1,
+		func task_open_start_scene(task: Task) -> int:
+			if interface.script_editor.get_current_script() == preload("res://GameObjects/ColorChange.gd") :
+				return 1
+			else :
+				return 0
 	)
 	complete_step()
 
@@ -267,6 +276,47 @@ func steps_script() :
 	])
 	complete_step()
 	
+	highlight_code(4, 5)
+	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.BOTTOM_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("La classe ColorChange"))
+	bubble_add_text([
+		gtr("On peut voir que cette classe défini la classe ColorChange qui hérites de XRToolsPickable ce qui va nous permettre d'attraper la balle en VR"),
+		gtr("On peut noter que dans godot contrairement à d'autres moteur de jeu on ne peut ajouter qu'un script par objet, la balle est donc maintenant de type ColorChanger qui est une sous classe de RigidBody3D"),
+	])
+	complete_step()
+	highlight_code(8, 9)
+	highlight_code(22,22)
+	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Déclarer des variables"))
+	bubble_add_text([
+		gtr("On peut voir que ici le changement de couleur a été hardcodé on aimerait plutôt déclarer les deux couleurs dans des variables en début de script"),
+		gtr("Voici un exemple de déclaration de variable de type Color"),
+	])
+	bubble_add_code(["var variable_name : Color = Color(1,1,1)"])
+	complete_step()
+	
+	context_set_3d()
+	highlight_controls([interface.inspector_dock])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_CENTER)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Accessibilité dans l'inspecteur"))
+	bubble_add_text([
+		gtr("Dans l'inspecteur, quand notre bille est selectionnée on voit que sa variable Max Speed est accessible dans l'éditeur mais pas les couleurs que nous venons de mettre"),
+		gtr("Corrigeons rapidement cela")])
+	complete_step()
+	
+	context_set_script()
+	highlight_code(8, 9)
+	highlight_code(14,14)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Ajouter les derniers moceaux de code"))
+	bubble_add_text([
+		gtr("Comme on peut le voir sur la ligne déclarant Max Speed il siffit de rajouter un [b]@export[/b] pour rendre la variable accessible dans l'éditeur")])
+	complete_step()
+
 
 func steps_conclusion() -> void:
 	context_set_2d()
