@@ -276,7 +276,7 @@ func _on_signal_logged(arg1: Variant=null, arg2: Variant=null, arg3: Variant=nul
 	var node : Node = arg3
 	
 	var timestamp = _format_timestamp()
-	log_to_file(timestamp + "," + _class_name + "," + signal_name + "," + node.name + "," + get_node_name(node))
+	log_to_file(timestamp + ";" + _class_name + ";" + signal_name + ";" + node.name + ";" + get_node_name(node))
 	if print_to_console :
 		print("[" + timestamp + "]" + "[" + _class_name + "] " + signal_name + " : " + node.name + " : " + get_node_name(node))
 
