@@ -110,7 +110,7 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Représentation de la scène"))
 	bubble_add_text(
-		[gtr("Dans l'éditeur, une fenêtre permet d'afficher les différents objets présent dans la scène actuelle."),
+		[gtr("Dans l'éditeur, une fenêtre permet d'afficher les différents objets présents dans la scène actuelle."),
 		gtr("Ces objets sont organisés sous forme d'arbre avec des noeuds aux responsabilités bien définies.")]
 	)
 	complete_step()
@@ -122,9 +122,9 @@ func steps_add_child() -> void:
 	bubble_add_task_instantiate_scene("res://GameObjects/Bille.tscn", "Bille", "Circuit")
 	bubble_set_title(gtr("Instancier une scène enfant"))
 	bubble_add_text(
-		[gtr("Comme nous avons déjà créer l'objet [i]Bille.tscn[/i], qui est donc une scène lui aussi, nous pouvons l'ajouter à notre scène principal [i]main.tscn[/i]."),
-		 gtr("Pour cela, deux options s'offrent à vous. Soit vous glissez la scène depuis la fenètre du système de fichiers sur le noeud du circuit sachant qu'elle se trouve dans le dossier GameObjects."),
-		 gtr("Soit vous cliquez sur le noeud Circuit de la scène puis sur \"Instancier une scène enfant\" pour accèder à une fenêtre de sélection.")]
+		[gtr("Comme nous avons déjà créé l'objet [i]Bille.tscn[/i], qui est donc une scène lui aussi, nous pouvons l'ajouter à notre scène principale [i]main.tscn[/i]."),
+		 gtr("Pour cela, deux options s'offrent à vous. Soit, vous glissez la scène depuis la fenêtre du système de fichiers sur le noeud du circuit sachant qu'elle se trouve dans le dossier GameObjects."),
+		 gtr("Soit vous cliquez sur le noeud Circuit de la scène puis sur \"Instancier une scène enfant\" pour accéder à une fenêtre de sélection.")]
 	)
 	mouse_move_by_position(interface.spatial_editor.global_position, interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size)
 	mouse_click(1)
@@ -180,7 +180,7 @@ func steps_edit_subscene() :
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	highlight_scene_nodes_by_path(["Circuit/Bille"])
-	bubble_set_title(gtr("Instance de Scène"))
+	bubble_set_title(gtr("Instance de scène"))
 	bubble_add_text([
 		gtr("On peut voir que certains noeuds de l'arbre, comme [b]Bille[/b] ou encore [b]Parcours[/b], ont un icon [b]Ouvrir dans l'éditeur[/b] %s sur leur ligne.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
 		gtr("Cet icon indique que ce noeud est une scène enfant. On peut instancier de multiples scènes enfant pour composer des scènes plus complexes."),
@@ -204,7 +204,7 @@ func steps_edit_subscene() :
 	bubble_set_title(gtr("Ajoutons la collision"))
 	bubble_add_text([
 		gtr("Si on clique sur CollisionShape3D, on peut voir l'attribut Shape dans l'éditeur."),
-		gtr("Nous allons ajouter une SphereShape3D même si dans l'absolu une CapsuleShape3D conviendrait aussi")
+		gtr("Nous allons ajouter une SphereShape3D même si dans l'absolu une CapsuleShape3D conviendrait aussi.")
 	])
 	bubble_add_task(
 		(gtr("Ajouter une SphereShape3D.")),
@@ -247,15 +247,15 @@ func steps_script() :
 	highlight_scene_nodes_by_name(["Bille"])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
-	#bubble_add_task_press_button(interface.scene_dock_attach_script_button)
+	
 	bubble_set_title(gtr("Attacher un script à un noeud"))
 	bubble_add_text(
 		[gtr("Comme pour l'instanciation d'une scène enfant, nous pouvons attacher le script par drag & drop ou en passant par le bouton."),
 		 gtr("Pour la première solution, le script [b]ColorChange.gd[/b] se trouve dans le dossier GameObjects. Il vous suffit de le glisser sur le noeud [b]Bille[/b]"),
-		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié. Dedans au lieu de creer un nouveau scirpt on parcours les fichiers pour trouver celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : [b]res://GameObjects/ColorChange.gd[/b])")]
+		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié. Dans celui-ci, on parcourt les fichiers pour trouver celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : [b]res://GameObjects/ColorChange.gd[/b])")]
 	)
 	bubble_add_task(
-		(gtr("Ajouter le script ColorChange")),
+		(gtr("Ajouter le script ColorChange.")),
 		1,
 		func task_open_start_scene(task: Task) -> int:
 			if interface.script_editor.get_current_script() == preload("res://GameObjects/ColorChange.gd") :
@@ -281,8 +281,8 @@ func steps_script() :
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("La classe ColorChange"))
 	bubble_add_text([
-		gtr("On peut voir que cette classe défini la classe ColorChange qui hérites de XRToolsPickable ce qui va nous permettre d'attraper la balle en VR"),
-		gtr("On peut noter que dans godot contrairement à d'autres moteur de jeu on ne peut ajouter qu'un script par objet, la balle est donc maintenant de type ColorChanger qui est une sous classe de RigidBody3D"),
+		gtr("On peut voir que cette classe défini la classe ColorChange qui hérite de XRToolsPickable ce qui va nous permettre d'attraper la balle en VR."),
+		gtr("On peut noter que dans Godot, contrairement à d'autres moteurs de jeu, on ne peut ajouter qu'un script par objet, la balle est donc maintenant de type ColorChanger qui est une sous-classe de RigidBody3D."),
 	])
 	complete_step()
 	highlight_code(8, 9)
@@ -291,8 +291,8 @@ func steps_script() :
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Déclarer des variables"))
 	bubble_add_text([
-		gtr("On peut voir que ici le changement de couleur a été hardcodé on aimerait plutôt déclarer les deux couleurs dans des variables en début de script"),
-		gtr("Voici un exemple de déclaration de variable de type Color"),
+		gtr("On peut voir que le changement de couleur a été hardcodé, on aimerait plutôt déclarer les deux couleurs dans des variables en début de script."),
+		gtr("Voici un exemple de déclaration de variable de type Color."),
 	])
 	bubble_add_code(["var variable_name : Color = Color(1,1,1)"])
 	complete_step()
@@ -303,8 +303,8 @@ func steps_script() :
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Accessibilité dans l'inspecteur"))
 	bubble_add_text([
-		gtr("Dans l'inspecteur, quand notre bille est selectionnée on voit que sa variable Max Speed est accessible dans l'éditeur mais pas les couleurs que nous venons de mettre"),
-		gtr("Corrigeons rapidement cela")])
+		gtr("Dans l'inspecteur, quand notre bille est selectionnée, on voit que sa variable Max Speed est accessible dans l'éditeur mais pas les couleurs que nous venons de mettre."),
+		gtr("Corrigeons rapidement cela.")])
 	complete_step()
 	
 	context_set_script()
@@ -312,9 +312,9 @@ func steps_script() :
 	highlight_code(14,14)
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
-	bubble_set_title(gtr("Ajouter les derniers moceaux de code"))
+	bubble_set_title(gtr("Ajouter les derniers morceaux de codes"))
 	bubble_add_text([
-		gtr("Comme on peut le voir sur la ligne déclarant Max Speed il siffit de rajouter un [b]@export[/b] pour rendre la variable accessible dans l'éditeur")])
+		gtr("Comme on peut le voir sur la ligne déclarant Max Speed, il suffit de rajouter un [b]@export[/b] pour rendre la variable accessible dans l'éditeur.")])
 	complete_step()
 
 
