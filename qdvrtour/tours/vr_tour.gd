@@ -282,9 +282,10 @@ func steps_script() :
 	bubble_set_title(gtr("La classe ColorChange"))
 	bubble_add_text([
 		gtr("On peut voir que cette classe défini la classe ColorChange qui hérite de XRToolsPickable ce qui va nous permettre d'attraper la balle en VR."),
-		gtr("On peut noter que dans Godot, contrairement à d'autres moteurs de jeu, on ne peut ajouter qu'un script par objet, la balle est donc maintenant de type ColorChanger qui est une sous-classe de RigidBody3D."),
+		gtr("On peut noter que dans Godot, contrairement à d'autres moteurs de jeu, on ne peut ajouter qu'un script par objet. La balle est maintenant de type ColorChange qui est une sous-classe de RigidBody3D."),
 	])
 	complete_step()
+	
 	highlight_code(8, 9)
 	highlight_code(22,22)
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
@@ -299,22 +300,39 @@ func steps_script() :
 	
 	context_set_3d()
 	highlight_controls([interface.inspector_dock])
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_CENTER)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Accessibilité dans l'inspecteur"))
 	bubble_add_text([
-		gtr("Dans l'inspecteur, quand notre bille est selectionnée, on voit que sa variable Max Speed est accessible dans l'éditeur mais pas les couleurs que nous venons de mettre."),
+		gtr("Dans l'inspecteur, quand notre bille est sélectionnée, on voit que sa variable Max Speed est accessible dans l'éditeur mais pas les couleurs que nous venons de mettre."),
 		gtr("Corrigeons rapidement cela.")])
 	complete_step()
 	
 	context_set_script()
-	highlight_code(8, 9)
-	highlight_code(14,14)
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Ajouter les derniers morceaux de codes"))
 	bubble_add_text([
 		gtr("Comme on peut le voir sur la ligne déclarant Max Speed, il suffit de rajouter un [b]@export[/b] pour rendre la variable accessible dans l'éditeur.")])
+	complete_step()
+	
+	context_set_3d()
+	highlight_controls([interface.inspector_dock])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Accessibilité dans l'inspecteur"))
+	bubble_add_text([
+		gtr("Vous pouvez maintenant modifier les couleurs comme bon vous semble à partir de l'inspecteur."),])
+	complete_step()
+	
+	highlight_controls([interface.run_bar_play_button], true)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_add_task_press_button(interface.run_bar_play_button)
+	bubble_set_title(gtr("Dernière version du jeu"))
+	bubble_add_text(
+		[gtr("Si vous lancez le jeu une dernière fois, vous devriez pouvoir prendre la bille et la voir prendre les couleurs que vous avez défini précédemment."),]
+	)
 	complete_step()
 
 
@@ -325,9 +343,9 @@ func steps_conclusion() -> void:
 	bubble_set_title(gtr("Travail réalisé"))
 	bubble_add_text(
 		[
-			gtr("Listing des tâches réalisées"),
-			gtr("[b]Tâche 1 :[/b] description."),
-			gtr("...")			
+			gtr("Vous avez appris à identifier les différents éléments de l'interface."),
+			gtr("Vous avez aussi appris ce que sont les scènes, les nodes et les scripts."),
+			gtr("Vous avez même instancié une scène enfant, attaché un script et modifié son code.")			
 		]
 	)
 	complete_step()
