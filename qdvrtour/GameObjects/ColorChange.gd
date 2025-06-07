@@ -5,8 +5,8 @@ class_name ColorChange
 extends XRToolsPickable
 
 #Couleurs extremes que prendra la bille a vitesse maximale et à l'arret
-#Exemple de déclaration de couleur 
-#var variable_name : Color = Color(1,1,1)
+
+
 
 #Reference du mesh de la sphère
 @onready var mesh3D : MeshInstance3D = $MeshInstance3D
