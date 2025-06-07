@@ -153,7 +153,9 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Autre alternative"))
 	bubble_add_text(
 		[gtr("Pour avoir un accès plus fin aux valeurs de position, on peut les rentrer numériquement dans l'inspecteur de la bille."),
-		gtr("Dans Node3D>Transform>Position.")]
+		gtr("Dans Node3D>Transform>Position."),
+		gtr("Pour le mettre au sommet du circuit la position est (1,2;1,2;0)")
+		]
 	)
 	complete_step()
 
@@ -250,9 +252,8 @@ func steps_script() :
 	
 	bubble_set_title(gtr("Attacher un script à un noeud"))
 	bubble_add_text(
-		[gtr("Comme pour l'instanciation d'une scène enfant, nous pouvons attacher le script par drag & drop ou en passant par le bouton."),
-		 gtr("Pour la première solution, le script [b]ColorChange.gd[/b] se trouve dans le dossier GameObjects. Il vous suffit de le glisser sur le noeud [b]Bille[/b]"),
-		 gtr("Pour la seconde, vous cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié. Dans celui-ci, on parcourt les fichiers pour trouver celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : [b]res://GameObjects/ColorChange.gd[/b])")]
+		[gtr("Cliquez sur le noeud [b]Bille[/b] puis sur \"Attacher un script\" pour accèder au menu dédié. Dans celui-ci, on parcourt les fichiers pour trouver celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : [b]res://GameObjects/ColorChange.gd[/b])"),
+]
 	)
 	bubble_add_task(
 		(gtr("Ajouter le script ColorChange.")),
@@ -281,21 +282,23 @@ func steps_script() :
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("La classe ColorChange"))
 	bubble_add_text([
-		gtr("On peut voir que cette classe défini la classe ColorChange qui hérite de XRToolsPickable ce qui va nous permettre d'attraper la balle en VR."),
-		gtr("On peut noter que dans Godot, contrairement à d'autres moteurs de jeu, on ne peut ajouter qu'un script par objet. La balle est maintenant de type ColorChange qui est une sous-classe de RigidBody3D."),
+		gtr("On peut voir que cette classe défini la classe ColorChange qui hérite de XRToolsPickable ce qui va nous permettre d'attraper la bille en VR."),
+		gtr("On peut noter que dans Godot, contrairement à d'autres moteurs de jeu, on ne peut ajouter qu'un script par objet. La bille est maintenant de type ColorChange qui est une sous-classe de RigidBody3D."),
 	])
 	complete_step()
 	
-	highlight_code(8, 9)
+	highlight_code(7, 14)
 	highlight_code(22,22)
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Déclarer des variables"))
 	bubble_add_text([
-		gtr("On peut voir que le changement de couleur a été hardcodé, on aimerait plutôt déclarer les deux couleurs dans des variables en début de script."),
+		gtr("On peut voir que le changement de couleur a été hardcodé à la ligne 22."), 
 		gtr("Voici un exemple de déclaration de variable de type Color."),
 	])
 	bubble_add_code(["var variable_name : Color = Color(1,1,1)"])
+	bubble_add_text([gtr("[b]Déclarez les deux couleurs dans des variables en début de script.[/b]"),
+	gtr("[b]Remplacez les valeurs hardcodées par les variables [/b]")])
 	complete_step()
 	
 	context_set_3d()
@@ -309,6 +312,7 @@ func steps_script() :
 	complete_step()
 	
 	context_set_script()
+	highlight_controls([interface.script_editor_code_panel])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Ajouter les derniers morceaux de codes"))
