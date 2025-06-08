@@ -32,10 +32,6 @@ enabled=PackedStringArray("res://addons/editortree/plugin.cfg", "res://addons/go
 
 import/blender/enabled=false
 
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://addons/godot_tours/tour.gd", "res://tours/vr_tour.gd")
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

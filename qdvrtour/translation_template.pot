@@ -1,0 +1,296 @@
+# LANGUAGE translation for GdVrTour for the following files:
+# res://tours/vr_tour.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GdVrTour\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: tours/vr_tour.gd
+msgid "[center][b]Welcome to Godot![/b][/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center]In this tutorial, you will be introduced to the [b]Godot editor[/b].[/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center]You’ll modify an existing project to explore its features.[/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center][b]Let’s get started![/b][/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Try the game"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Click the Run button at the top right of the editor to launch the project."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Then, press [b]%s[/b] or close the game window to stop it."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Let's add a marble"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "We are now going to add a marble to the game."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "View of the current scene"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "At the center of the editor is the viewport showing the current [b]scene[/b]."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Scene representation"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "In the editor, a window displays the various objects present in the current scene."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "These objects are organized in a tree structure with nodes that have well-defined responsibilities."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Instantiate a child scene"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Since we already created the object [i]Bille.tscn[/i], which is also a scene, we can add it to our main scene [i]main.tscn[/i]."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "There are two ways to do this. Either drag the scene from the FileSystem dock onto the Circuit node (it's in the GameObjects folder),"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "or click the Circuit node in the scene and then 'Instantiate Child Scene' to open the selection window."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Move the marble in the scene"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Now that we’ve added the marble to the hierarchy, just click on it to manipulate it in the viewport."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Alternative method"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "To get more precise control over the position values, you can enter them manually in the marble's inspector."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Go to Node3D > Transform > Position."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "To place it at the top of the circuit, use position (1.2; 1.2; 0)."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "In-game presence"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "If you run the game again, you’ll see the marble appear briefly before falling through the ground."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Add a collision"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "To prevent the marble from passing through the ground and other objects in the scene, we’ll add a collision box."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Scene instance"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You can see that some nodes in the tree, like [b]Bille[/b] and [b]Parcours[/b], have an [b]Open in Editor[/b] icon %s next to them."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "This icon indicates that the node is an instanced scene. You can instance multiple child scenes to build more complex ones."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "By clicking the [b]Open in Editor[/b] icon %s next to the [b]Bille[/b] node, you’ll be able to open and edit the Bille scene."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Open the Bille scene."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Let’s add the collision"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "If you click on CollisionShape3D, you can see the Shape property in the inspector."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "We’ll add a SphereShape3D, although a CapsuleShape3D would also work."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Add a SphereShape3D."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "In-game check"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "If you place the marble on the track, you should see it follow the path."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Let’s add some color"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "We wrote a script that changes the marble’s color based on its speed, but we forgot to attach it to the marble."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Attach a script to a node"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Click on the [b]Bille[/b] node, then on \"Attach script\" to access the dedicated menu. From there, browse to the file named [b]ColorChange.gd[/b] (the path should be: [b]res://GameObjects/ColorChange.gd[/b])"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Attach the ColorChange script."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Open the script"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You can see that [b]Bille[/b] has an [b]Open Script[/b] icon %s next to its name."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "This icon shows the node has an attached script."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Clicking the [b]Open Script[/b] icon %s next to the [b]Bille[/b] node lets you access and edit the script we just attached."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "The ColorChange class"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You can see this class defines ColorChange which inherits from XRToolsPickable, allowing us to grab the marble in VR."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Note that in Godot, unlike in some other engines, you can only attach one script per object. The marble is now of type ColorChange, which is a subclass of RigidBody3D."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Declare variables"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "We can see the color change is hardcoded on line 22."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Here is an example of declaring a variable of type Color."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[b]Declare the two colors as variables at the start of the script.[/b]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[b]Replace the hardcoded values with the variables[/b]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Inspector accessibility"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "In the inspector, when the marble is selected, we can see the Max Speed variable is visible in the editor, but not the color variables we just added."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Let’s quickly fix that."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Add the last code bits"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "As seen on the Max Speed line, just add an [b]@export[/b] to make the variable editable in the inspector."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You can now edit the colors freely from the inspector."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "Final game version"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "If you launch the game one last time, you should be able to grab the marble and see it take on the colors you defined."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "What you’ve built"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You’ve learned how to identify key parts of the interface."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You’ve also learned what scenes, nodes, and scripts are."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "You even instanced a child scene, attached a script, and edited its code."
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center][b]Congratulations![/b][/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center]What did you think of the experience?[/center]"
+msgstr ""
+
+#: tours/vr_tour.gd
+msgid "[center]Feel free to experiment on your own![/center]"
+msgstr ""
