@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0pbwebxsvho0"]
+[gd_scene load_steps=16 format=3 uid="uid://d0pbwebxsvho0"]
 
 [ext_resource type="Script" uid="uid://d016x4lvakl2q" path="res://circuit.gd" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_kek77"]
+[ext_resource type="PackedScene" uid="uid://bexkvuwgjilbd" path="res://GameObjects/Bille.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bjba7kqpxi506" path="res://GameObjects/Parcours.tscn" id="6_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ieq6j"]
@@ -47,7 +48,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.429622)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161214, 0.429622)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
@@ -77,6 +78,7 @@ mesh = SubResource("BoxMesh_ykw7r")
 [node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("4_kek77")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161214, 0)
 physics_material_override = SubResource("PhysicsMaterial_ieq6j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
@@ -86,4 +88,5 @@ shape = SubResource("BoxShape3D_wl86v")
 mesh = SubResource("BoxMesh_ofq8x")
 
 [node name="Parcours" parent="." instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.133, 0.637, -0.676)
+transform = Transform3D(0.1, 0, 0, 0, 0.08, 0, 0, 0, 0.1, -0.133, 0.759037, -0.676)
+
