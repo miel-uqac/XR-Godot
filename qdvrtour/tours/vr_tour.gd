@@ -131,9 +131,9 @@ func steps_add_child() -> void:
 	mouse_click(1)
 	complete_step()
 	
-	highlight_controls([interface.scene_dock])
+	highlight_controls([interface.scene_dock,interface.spatial_editor])
 	highlight_scene_nodes_by_name(["Bille"])
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.BOTTOM_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Move the marble in the scene"))
 	bubble_add_text(
@@ -295,7 +295,8 @@ func steps_script():
 	bubble_add_code(["var variable_name : Color = Color(1,1,1)"])
 	bubble_add_text([
 		gtr("[b]Declare the two colors as variables at the start of the script.[/b]"),
-		gtr("[b]Replace the hardcoded values with the variables[/b]")
+		gtr("[b]Replace the hardcoded values with the variables[/b]"),
+		gtr("Don't forget, you have to save with File->Save")
 	])
 	complete_step()
 	
@@ -312,11 +313,12 @@ func steps_script():
 	
 	context_set_script()
 	highlight_controls([interface.script_editor_code_panel])
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.CENTER_RIGHT)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.BOTTOM_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Add the last code bits"))
 	bubble_add_text([
 		gtr("As seen on the Max Speed line, just add an [b]@export[/b] to make the variable editable in the inspector."),
+		gtr("Don't forget, you have to save with File->Save")
 	])
 	complete_step()
 	

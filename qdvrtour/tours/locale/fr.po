@@ -345,6 +345,10 @@ msgid "[b]Replace the hardcoded values with the variables[/b]"
 msgstr "[b]Remplacez les valeurs hardcodées par les variables [/b]"
 
 #: tours/vr_tour.gd
+msgid "Don't forget, you have to save with File->Save"
+msgstr "N'oubliez pas de sauvegarger avec Fichier->Enregistrer"
+
+#: tours/vr_tour.gd
 msgid "Inspector accessibility"
 msgstr "Accessibilité dans l'inspecteur"
 
