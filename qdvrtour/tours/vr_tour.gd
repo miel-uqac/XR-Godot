@@ -88,7 +88,8 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Let's add a marble"))
 	bubble_add_text(
-		[gtr("We are now going to add a marble to the game."),]
+		[gtr("In this tutorial we will make change in a project containing a marble track."),
+		gtr("First we will add a marble, then collisions on this marble and finally have an introduction to GDScript will allow us to change the color of this marble depending on its speed.")]
 	)
 	complete_step()
 
@@ -122,10 +123,9 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Instantiate a child scene"))
 	bubble_add_text(
 		[gtr("Since we already created the object [i]Bille.tscn[/i], which is also a scene, we can add it to our main scene [i]main.tscn[/i]."),
-		 gtr("There are two ways to do this. Either drag the scene from the FileSystem dock onto the Circuit node (it's in the GameObjects folder),"),
-		 gtr("or click the Circuit node in the scene and then 'Instantiate Child Scene' to open the selection window.")]
+		 gtr("Click the Circuit node in the scene and then 'Instantiate Child Scene' to open the selection window.")]
 	)
-	mouse_move_by_position(interface.spatial_editor.global_position, interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size)
+	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size)
 	mouse_click(1)
 	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
 	mouse_click(1)
@@ -133,7 +133,7 @@ func steps_add_child() -> void:
 	
 	highlight_controls([interface.scene_dock,interface.spatial_editor])
 	highlight_scene_nodes_by_name(["Bille"])
-	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.BOTTOM_LEFT)
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Move the marble in the scene"))
 	bubble_add_text(
@@ -203,8 +203,8 @@ func steps_edit_subscene() :
 	highlight_scene_nodes_by_path(["Bille/CollisionShape3D"])
 	bubble_set_title(gtr("Let’s add the collision"))
 	bubble_add_text([
-		gtr("If you click on CollisionShape3D, you can see the Shape property in the inspector."),
-		gtr("We’ll add a SphereShape3D, although a CapsuleShape3D would also work.")
+		gtr("If you click on CollisionShape3D, you can see the [b]Shape[/b] property in the inspector."),
+		gtr("We’ll add a SphereShape3D.")
 	])
 	bubble_add_task(
 		(gtr("Add a SphereShape3D.")),
@@ -229,7 +229,7 @@ func steps_edit_subscene() :
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("In-game check"))
 	bubble_add_text(
-		[gtr("If you place the marble on the track, you should see it follow the path."),]
+		[gtr("If you place the marble accurately on the track, you should see it follow the path."),]
 	)
 	complete_step()
 
@@ -239,7 +239,7 @@ func steps_script():
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Let’s add some color"))
 	bubble_add_text(
-		[gtr("We wrote a script that changes the marble’s color based on its speed, but we forgot to attach it to the marble."),]
+		[gtr("A script was written in order to change the marble’s color based on its speed, but we forgot to attach it to the marble."),]
 	)
 	complete_step()
 	
@@ -279,7 +279,7 @@ func steps_script():
 	bubble_set_title(gtr("The ColorChange class"))
 	bubble_add_text([
 		gtr("You can see this class defines ColorChange which inherits from XRToolsPickable, allowing us to grab the marble in VR."),
-		gtr("Note that in Godot, unlike in some other engines, you can only attach one script per object. The marble is now of type ColorChange, which is a subclass of RigidBody3D."),
+		gtr("The code is written in GDScript an interpreted language resembling python."),
 	])
 	complete_step()
 	
