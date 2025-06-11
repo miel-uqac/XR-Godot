@@ -163,7 +163,7 @@ func steps_add_child() -> void:
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("In-game presence"))
 	bubble_add_text(
-		[gtr("If you run the game again, you’ll see the marble appear briefly before falling through the ground."),]
+		[gtr("If you run the game again, you will not see the marble, the reason is simple it fell through the ground. during the game loading."),]
 	)
 	complete_step()
 
@@ -204,7 +204,7 @@ func steps_edit_subscene() :
 	bubble_set_title(gtr("Let’s add the collision"))
 	bubble_add_text([
 		gtr("If you click on CollisionShape3D, you can see the [b]Shape[/b] property in the inspector."),
-		gtr("We’ll add a SphereShape3D.")
+		gtr("We’ll add a SphereShape3D. To select a new shape you have to click on [b]<empty>[/b].")
 	])
 	bubble_add_task(
 		(gtr("Add a SphereShape3D.")),

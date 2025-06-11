@@ -156,7 +156,7 @@ msgstr "Dans Node3D > Transform > Position."
 
 #: tours/vr_tour.gd
 msgid "To place it at the top of the circuit, use position (1.2; 1.2; 0)."
-msgstr "Pour le mettre au sommet du circuit la position est (1.2; 1.2; 0)."
+msgstr "Pour la mettre au sommet du circuit la position est (1.2; 1.2; 0)."
 
 #: tours/vr_tour.gd
 msgid "In-game presence"
@@ -164,11 +164,9 @@ msgstr "Présence en jeu"
 
 #: tours/vr_tour.gd
 msgid ""
-"If you run the game again, you’ll see the marble appear briefly before "
-"falling through the ground."
+"If you run the game again, you will not see the marble, the reason is simple it fell through the ground. during the game loading."
 msgstr ""
-"Si on relance le jeu, on peut voir que la bille apparaît brièvement avant de "
-"traverser le sol."
+"Si on relance le jeu on ne voit pas la bille, la raison est simple, elle est passée à travers le sol le temps que le jeu charge."
 
 #: tours/vr_tour.gd
 msgid "Add a collision"
@@ -227,9 +225,9 @@ msgstr ""
 "l'éditeur."
 
 #: tours/vr_tour.gd
-msgid "We’ll add a SphereShape3D."
+msgid "We’ll add a SphereShape3D. To select a new shape you have to click on [b]<empty>[/b]."
 msgstr ""
-"Nous allons ajouter une SphereShape3D."
+"Nous allons ajouter une SphereShape3D. Pour sélectionner la nouvelle forme il faut clicker sur [b]<vide>[/b]"
 
 #: tours/vr_tour.gd
 msgid "Add a SphereShape3D."
