@@ -113,9 +113,9 @@ msgstr ""
 
 #: tours/vr_tour.gd
 msgid ""
-"Click the Circuit node in the scene and then 'Instantiate Child Scene' to open the selection window."
+"Click the Circuit node in the scene and then %s 'Instantiate Child Scene' to open the selection window."
 msgstr ""
-"Cliquez sur le nœud Circuit de la scène puis sur \"Instancier "
+"Cliquez sur le nœud Circuit de la scène puis sur %s \"Instancier "
 "une scène enfant\" pour accéder à une fenêtre de sélection."
 
 #: addons/godot_tours/tour.gd
