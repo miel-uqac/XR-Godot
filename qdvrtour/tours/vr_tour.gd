@@ -41,7 +41,7 @@ func _build() -> void:
 	queue_command(func reset_editor_state_for_tour():
 		interface.canvas_item_editor_toolbar_grid_button.button_pressed = false
 		interface.canvas_item_editor_toolbar_smart_snap_button.button_pressed = false
-		interface.bottom_button_output.button_pressed = false
+		interface.bottom_output_button.button_pressed = false
 	)
 
 	steps_intro()
@@ -106,7 +106,7 @@ func steps_add_child() -> void:
 
 	# 0041: Adding a child to scene, folders
 	highlight_controls([interface.scene_dock])
-	print(interface.scene_dock)
+	#print(interface.scene_dock)
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Scene representation"))
@@ -212,9 +212,8 @@ func steps_edit_subscene() :
 		1,
 		func task_open_start_scene(task: Task) -> int:
 			var scene_root: Node = EditorInterface.get_edited_scene_root()
-			var collisionShape : CollisionShape3D = scene_root.get_child(0)
-			print(collisionShape)
-			if collisionShape == null:
+			var collisionShape = scene_root.get_child(0)
+			if not collisionShape is CollisionShape3D:
 				return 0
 			if (collisionShape.shape is SphereShape3D) : 
 				return 1
