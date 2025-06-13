@@ -10,9 +10,7 @@ const VideoStreamPlayerPackedScene := preload("video_stream_player.tscn")
 const RichTextLabelPackedScene := preload("rich_text_label/rich_text_label.tscn")
 
 const CLASS_IMG := r"[img=%dx%d]res://addons/godot_tours/bubble/assets/icons/$1.svg[/img] [b]$1[/b]"
-const COMMIT_MESSAGE := """It seems you're not done with this step! [color=#FF8A00]You may get stuck later on in the Tour if you skip ahead without completing all the tasks.[/color] You can try going back one step before skipping.
-
-If you decide to skip the step, note down the tasks and do them before you start the following steps."""
+const COMMIT_MESSAGE := "It seems you're not done with this step! [color=#FF8A00]You may get stuck later on in the Tour if you skip ahead without completing all the tasks.[/color] You can try going back one step before skipping. If you decide to skip the step, note down the tasks and do them before you start the following steps."
 const LOG_MESSAGE := """[color=#FF8A00][b]Godot Tours[/b] is an experimental Edtech that evolves with the Godot engine and requires ongoing testing. It's not uncommon to encounter bugs.[/color]
 Please be patient and try the following:
 
@@ -102,18 +100,18 @@ func _ready() -> void:
 
 	update_step_count_display(0)
 	Utils.update_locale(translation_service, {
-		back_button: {text = "BACK"},
-		next_button: {text = "NEXT"},
-		finish_button: {text = "END TOUR AND CONTINUE LEARNING"},
-		button_close_no: {text = "NO"},
-		button_close_yes: {text = "YES"},
-		label_close_tour: {text = "Close the tour?"},
-		label_progress_lost: {text = "Your progress will be lost."},
-		help_rich_text_label: {text = "[u]Help[u]"},
-		skip_rich_text_label: {text = "[right][u]Skip[/u][/right]"},
-		skip_step_button: {text = "SKIP STEP"},
-		try_again_button: {text = "TRY AGAIN"},
-		info_rich_text_label: {text = COMMIT_MESSAGE},
+		back_button: {text = translation_service.get_tour_message("BACK","")},
+		next_button: {text = translation_service.get_tour_message("NEXT","")},
+		finish_button: {text = translation_service.get_tour_message("END TOUR AND CONTINUE LEARNING","")},
+		button_close_no: {text = translation_service.get_tour_message("NO","")},
+		button_close_yes: {text = translation_service.get_tour_message("YES","")},
+		label_close_tour: {text = translation_service.get_tour_message("Close the tour?","")},
+		label_progress_lost: {text = translation_service.get_tour_message("Your progress will be lost.","")},
+		help_rich_text_label: {text = translation_service.get_tour_message("[u]Help[u]","")},
+		skip_rich_text_label: {text = translation_service.get_tour_message("[right][u]Skip[/u][/right]","")},
+		skip_step_button: {text = translation_service.get_tour_message("SKIP STEP","")},
+		try_again_button: {text = translation_service.get_tour_message("TRY AGAIN","")},
+		info_rich_text_label: {text = translation_service.get_tour_message(COMMIT_MESSAGE,"")},#"It seems you're not done with this step! [color=#FF8A00]You may get stuck later on in the Tour if you skip ahead without completing all the tasks.[/color].","")},
 	})
 
 	# Clear tasks etc. in case we have some for testing in the scene.
@@ -149,7 +147,7 @@ func _ready() -> void:
 
 func _on_next_button_pressed() -> void:
 	if next_button.theme_type_variation == "GrayButton":
-		Utils.update_locale(translation_service, {info_rich_text_label: {text = COMMIT_MESSAGE}})
+		Utils.update_locale(translation_service, {info_rich_text_label: {text = translation_service.get_tour_message(COMMIT_MESSAGE,"")}})
 		buttons_panel_container.visible = false
 		bottom_h_box_container.visible = false
 

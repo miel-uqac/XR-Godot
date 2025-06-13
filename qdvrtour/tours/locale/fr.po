@@ -17,6 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.6\n"
 
+
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "BACK"
+msgstr "PRÉCÉDENT"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "NEXT"
+msgstr "SUIVANT"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "END TOUR AND CONTINUE LEARNING"
+msgstr "FIN DU TOUR ET CONTINUER A APPRENDRE"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "NO"
+msgstr "NON"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "YES"
+msgstr "OUI"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "Close the tour?"
+msgstr "Fermer le tour?"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "Your progress will be lost."
+msgstr "Votre avancement sera perdu"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "[u]Help[u]"
+msgstr "[u]Aide[u]"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "[right][u]Skip[/u][/right]"
+msgstr "[right][u]Passer[/u][/right]"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "[u]Help[u]"
+msgstr "[u]Aide[u]"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "SKIP STEP"
+msgstr "PASSER L'ÉTAPE"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "TRY AGAIN"
+msgstr "RÉESSAYER"
+
+#: addons/godot_tours/bubble/default_bubble.gd
+msgid "It seems you're not done with this step! [color=#FF8A00]You may get stuck later on in the Tour if you skip ahead without completing all the tasks.[/color] You can try going back one step before skipping. If you decide to skip the step, note down the tasks and do them before you start the following steps."
+msgstr "Il semblerait que vous n'avez pas fini cette étape! [color=#FF8A00] Vous pourriez être coincé plus tard dans le Tour si vous passez sans compléter toute les étapes.[/color] Vous pouvez essayer de revenir une étape en arrière avant de passer. Si vous décidez de passer cette étape. Notez l'étape que vous passez avant de continuer le tutoriel."
+
 #: tours/vr_tour.gd
 msgid "[center][b]Welcome to Godot![/b][/center]"
 msgstr "[center][b]Bienvenue dans Godot ![/b][/center]"
