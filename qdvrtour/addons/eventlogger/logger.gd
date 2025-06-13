@@ -250,6 +250,11 @@ func get_node_name(node : Control):
 		var editor_property : EditorProperty = tmp_node
 		return editor_property.get_edited_object().name + " " + editor_property.label + " " + spin_slider.label + " = " + str(spin_slider.value).pad_decimals(2)
 	
+	if node is TextEdit:
+		var te := node as TextEdit
+		var line := te.get_caret_line()
+		return "line %d: %s" % [line, te.get_line(line)]
+
 	return ""
 
 func _on_signal_logged(arg1: Variant=null, arg2: Variant=null, arg3: Variant=null, arg4 :Variant=null, arg5 :Variant=null, arg6 :Variant=null):
