@@ -13,6 +13,7 @@ config_version=5
 config/name="GdVrTour"
 run/main_scene="uid://d0pbwebxsvho0"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://chhrwh08k1s7m"
 config/icon="res://icon.svg"
 
 [audio]
@@ -26,7 +27,7 @@ XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/editortree/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/godot_tours/plugin.cfg", "res://addons/zylann.editor_debugger/plugin.cfg")
+enabled=PackedStringArray("res://addons/editorinputrebinder/plugin.cfg", "res://addons/eventlogger/plugin.cfg", "res://addons/godot-xr-tools/plugin.cfg", "res://addons/godot_tours/plugin.cfg")
 
 [filesystem]
 
