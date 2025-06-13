@@ -389,6 +389,10 @@ msgstr ""
 "bille et la voir prendre les couleurs que vous avez défini précédemment."
 
 #: tours/vr_tour.gd
+msgid "If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this 'Bille' instance."
+msgstr "Si la color que vous avez mise n'apparait pas, tentez de revenir à la scène [b]main[/b] et regardez les valeurs des variables de l'instance de 'Bille'"
+
+#: tours/vr_tour.gd
 msgid "What you’ve built"
 msgstr "Travail réalisé"
 

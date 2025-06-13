@@ -339,7 +339,8 @@ func steps_script():
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("Final game version"))
 	bubble_add_text(
-		[gtr("If you launch the game one last time, you should be able to grab the marble and see it take on the colors you defined."),]
+		[gtr("If you launch the game one last time, you should be able to grab the marble and see it take on the colors you defined."),
+		gtr("If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this 'Bille' instance.")]
 	)
 	complete_step()
 
