@@ -40,5 +40,4 @@ renderer/rendering_method.mobile="gl_compatibility"
 [xr]
 
 openxr/enabled=true
-openxr/default_action_map="res://Tres/openxr_action_map.tres"
 shaders/enabled=true
