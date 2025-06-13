@@ -31,7 +31,7 @@ const ICONS_MAP = {
 	zoom_out = "res://assets/icon_zoom_out.svg",
 	open_in_editor = "res://assets/icon_open_in_editor.svg",
 	node_signal_connected = "res://assets/icon_signal_scene_dock.svg",
-	instanciate_child_scene = "res://assets/Instance.svg"
+	instantiate_child_scene = "res://assets/Instance.svg"
 }
 
 var scene_main := "res://main.tscn"
@@ -116,7 +116,7 @@ func steps_add_child() -> void:
 	)
 	complete_step()
 	
-	highlight_controls([interface.scene_dock_instanciate_scene_button])
+	highlight_controls([interface.scene_dock_instantiate_scene_button])
 	highlight_scene_nodes_by_name(["Circuit"])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
@@ -124,11 +124,11 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Instantiate a child scene"))
 	bubble_add_text(
 		[gtr("Since we already created the object [i]Bille.tscn[/i], which is also a scene, we can add it to our main scene [i]main.tscn[/i]."),
-		 gtr("Click the Circuit node in the scene and then %s 'Instantiate Child Scene' to open the selection window.")% bbcode_generate_icon_image_string(ICONS_MAP.instanciate_child_scene)]
+		 gtr("Click the Circuit node in the scene and then %s 'Instantiate Child Scene' to open the selection window.")% bbcode_generate_icon_image_string(ICONS_MAP.instantiate_child_scene)]
 	)
-	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size)
+	mouse_move_by_position(interface.scene_dock_instantiate_scene_button.global_position + 2 * interface.scene_dock_instantiate_scene_button.size, interface.scene_dock_instantiate_scene_button.global_position + 2 * interface.scene_dock_instantiate_scene_button.size)
 	mouse_click(1)
-	mouse_move_by_position(interface.scene_dock_instanciate_scene_button.global_position + 2 * interface.scene_dock_instanciate_scene_button.size, interface.scene_dock_instanciate_scene_button.global_position + 0.5* interface.scene_dock_instanciate_scene_button.size)
+	mouse_move_by_position(interface.scene_dock_instantiate_scene_button.global_position + 2 * interface.scene_dock_instantiate_scene_button.size, interface.scene_dock_instantiate_scene_button.global_position + 0.5* interface.scene_dock_instantiate_scene_button.size)
 	mouse_click(1)
 	complete_step()
 	

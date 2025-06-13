@@ -114,7 +114,7 @@ var snap_options_scale_step_controls: Array[Control] = []
 var scene_tabs: TabBar = null
 var scene_dock: VBoxContainer = null
 var scene_dock_add_button: Button = null
-var scene_dock_instanciate_scene_button : Button = null
+var scene_dock_instantiate_scene_button : Button = null
 var scene_dock_attach_script_button : Button = null
 var scene_tree: Tree = null
 var import_dock: VBoxContainer = null
@@ -440,7 +440,7 @@ func _init() -> void:
 	# Left Upper
 	scene_dock = Utils.find_child_by_type(base_control, "SceneTreeDock")
 	scene_dock_add_button = scene_dock.get_child(0).get_child(0)
-	scene_dock_instanciate_scene_button = scene_dock.get_child(0).get_child(1)
+	scene_dock_instantiate_scene_button = scene_dock.get_child(0).get_child(1)
 	scene_dock_attach_script_button = scene_dock.get_child(0).get_child(3)
 
 	node_create_window = Utils.find_child_by_type(scene_dock, "CreateDialog")
@@ -719,7 +719,7 @@ func _init() -> void:
 		spatial_editor_toolbar_environment_button: ["spatial_editor_toolbar_environment_button", "PreviewEnvironment"],
 		spatial_editor_toolbar_sun_environment_button: ["spatial_editor_toolbar_sun_environment_button", "GuiTabMenuHl"],
 		scene_dock_add_button: ["scene_dock_add_button", "Add"],
-		scene_dock_instanciate_scene_button: ["scene_dock_instanciate_scene_button", "InstanciateScene"],
+		scene_dock_instantiate_scene_button: ["scene_dock_instantiate_scene_button", "Instance"],
 		node_dock_signals_button: ["node_dock_signals_button", "Signals"],
 		node_dock_groups_button: ["node_dock_groups_button", "Groups"],
 		spriteframes_animation_toolbar_add_animation_button: ["spriteframes_animation_toolbar_add_animation_button", "New"],
