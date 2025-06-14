@@ -71,6 +71,23 @@ msgstr "RÉESSAYER"
 msgid "It seems you're not done with this step! [color=#FF8A00]You may get stuck later on in the Tour if you skip ahead without completing all the tasks.[/color] You can try going back one step before skipping. If you decide to skip the step, note down the tasks and do them before you start the following steps."
 msgstr "Il semblerait que vous n'avez pas fini cette étape! [color=#FF8A00] Vous pourriez être coincé plus tard dans le Tour si vous passez sans compléter toute les étapes.[/color] Vous pouvez essayer de revenir une étape en arrière avant de passer. Si vous décidez de passer cette étape. Notez l'étape que vous passez avant de continuer le tutoriel."
 
+#: addons/godot_tours/ui/ui_welcome_menu.gd
+msgid "Welcome to Godot Tour!"
+msgstr "Bienvenu sur Godot Tour!"
+
+
+#: addons/godot_tours/ui/ui_welcome_menu.gd
+msgid "START LEARNING"
+msgstr "COMMENCER LE TOUR"
+
+#: addons/godot_tours/ui/ui_welcome_menu.gd
+msgid "NO"
+msgstr "NON"
+
+#: addons/godot_tours/ui/ui_welcome_menu.gd
+msgid "YES"
+msgstr "OUI"
+
 #: tours/vr_tour.gd
 msgid "[center][b]Welcome to Godot![/b][/center]"
 msgstr "[center][b]Bienvenue dans Godot ![/b][/center]"
