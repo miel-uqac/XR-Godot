@@ -29,6 +29,8 @@ const ICONS_MAP = {
 	script_indent = "res://assets/icon_script_indent.svg",
 	zoom_in = "res://assets/icon_zoom_in.svg",
 	zoom_out = "res://assets/icon_zoom_out.svg",
+	play_button = "res://assets/icon_play_scene.svg",
+	add_script_button = "res://assets/icon_add_script.svg",
 	open_in_editor = "res://assets/icon_open_in_editor.svg",
 	node_signal_connected = "res://assets/icon_signal_scene_dock.svg",
 	instantiate_child_scene = "res://assets/Instance.svg"
@@ -65,7 +67,7 @@ func steps_intro() -> void:
 	bubble_add_text(
 		[gtr("[center]In this tutorial, you will be introduced to the [b]Godot editor[/b].[/center]"),
 		gtr("[center]You’ll modify an existing project to explore its features.[/center]"),
-		gtr("[center][b]Let’s get started![/b][/center]"),]
+		gtr("[center][b]Let’s get started ![/b][/center]"),]
 	)
 	bubble_set_footer(CREDITS_FOOTER_GDQUEST)
 	queue_command(func avatar_wink(): bubble.avatar.do_wink())
@@ -78,7 +80,7 @@ func steps_intro() -> void:
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("Try the game"))
 	bubble_add_text(
-		[gtr("Click the Run button at the top right of the editor to launch the project."),
+		[gtr("Click the Run button % at the top right of the editor to launch the project.") % bbcode_generate_icon_image_string(ICONS_MAP.play_button),
 		gtr("Then, press [b]%s[/b] or close the game window to stop it.") % shortcuts.stop]
 	)
 	complete_step()
@@ -90,7 +92,9 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Let's add a marble"))
 	bubble_add_text(
 		[gtr("In this tutorial we will make change in a project containing a marble track."),
-		gtr("First we will add a marble, then collisions on this marble and finally have an introduction to GDScript will allow us to change the color of this marble depending on its speed.")]
+		gtr("First we will add a marble."),
+		gtr("Then we will add collisions on this marble."),
+		gtr("Finally we will have an introduction to GDScript, this will allow us to change the color of this marble depending on its speed.")]
 	)
 	complete_step()
 
@@ -111,7 +115,7 @@ func steps_add_child() -> void:
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Scene representation"))
 	bubble_add_text(
-		[gtr("In the editor, a window displays the various objects present in the current scene."),
+		[gtr("In the editor, a tab displays the various objects present in the current scene."),
 		gtr("These objects are organized in a tree structure with nodes that have well-defined responsibilities.")]
 	)
 	complete_step()
@@ -123,8 +127,8 @@ func steps_add_child() -> void:
 	bubble_add_task_instantiate_scene("res://GameObjects/Bille.tscn", "Bille", "Circuit")
 	bubble_set_title(gtr("Instantiate a child scene"))
 	bubble_add_text(
-		[gtr("Since we already created the object [i]Bille.tscn[/i], which is also a scene, we can add it to our main scene [i]main.tscn[/i]."),
-		 gtr("Click the Circuit node in the scene and then %s 'Instantiate Child Scene' to open the selection window.")% bbcode_generate_icon_image_string(ICONS_MAP.instantiate_child_scene)]
+		[gtr("Since the object [i]Bille.tscn[/i] is already created, it can be added to our main scene [i]main.tscn[/i]."),
+		 gtr("Click the [b]Circuit[/b] node in the scene and then [b]Instantiate Child Scene[/b] %s to open the selection window.")% bbcode_generate_icon_image_string(ICONS_MAP.instantiate_child_scene)]
 	)
 	mouse_move_by_position(interface.scene_dock_instantiate_scene_button.global_position + 2 * interface.scene_dock_instantiate_scene_button.size, interface.scene_dock_instantiate_scene_button.global_position + 2 * interface.scene_dock_instantiate_scene_button.size)
 	mouse_click(1)
@@ -141,7 +145,7 @@ func steps_add_child() -> void:
 		[gtr("Now that we’ve added the marble to the hierarchy, just click on it to manipulate it in the viewport."),]
 	)
 	mouse_move_by_callable(
-		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit/Bille")),
 		get_tree_item_center_by_path.bind(interface.scene_tree, ("Circuit/Bille")),
 	)
 	mouse_click(1)
@@ -153,8 +157,9 @@ func steps_add_child() -> void:
 	bubble_set_title(gtr("Alternative method"))
 	bubble_add_text(
 		[gtr("To get more precise control over the position values, you can enter them manually in the marble's inspector."),
-		gtr("Go to Node3D > Transform > Position."),
-		gtr("To place it at the top of the circuit, use position (1.2; 1.2; 0).")]
+		gtr("Go to [b]Node3D[/b] > [b]Transform[/b] > [b]Position[/b]."),
+		gtr("To place it at the top of the circuit, use position:"),
+		gtr("[center][b](1.2; 1.2; 0)[/b][/center]")]
 	)
 	complete_step()
 
@@ -185,10 +190,10 @@ func steps_edit_subscene() :
 	bubble_add_text([
 		gtr("You can see that some nodes in the tree, like [b]Bille[/b] and [b]Parcours[/b], have an [b]Open in Editor[/b] icon %s next to them.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
 		gtr("This icon indicates that the node is an instanced scene. You can instance multiple child scenes to build more complex ones."),
-		gtr("By clicking the [b]Open in Editor[/b] icon %s next to the [b]Bille[/b] node, you’ll be able to open and edit the Bille scene.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
+		gtr("By clicking the [b]Open in Editor[/b] icon %s next to the [b]Bille[/b] node, you’ll be able to open and edit the [b]Bille[/b] scene.") % bbcode_generate_icon_image_string(ICONS_MAP.open_in_editor),
 	])
 	bubble_add_task(
-		(gtr("Open the Bille scene.")),
+		(gtr("Open the [b]Bille[/b] scene.")),
 		1,
 		func task_open_start_scene(task: Task) -> int:
 			var scene_root: Node = EditorInterface.get_edited_scene_root()
@@ -204,11 +209,11 @@ func steps_edit_subscene() :
 	highlight_scene_nodes_by_path(["Bille/CollisionShape3D"])
 	bubble_set_title(gtr("Let’s add the collision"))
 	bubble_add_text([
-		gtr("If you click on CollisionShape3D, you can see the [b]Shape[/b] property in the inspector."),
-		gtr("We’ll add a SphereShape3D. To select a new shape you have to click on [b]<empty>[/b].")
+		gtr("If you click on [b]CollisionShape3D[/b], you can see the [b]Shape[/b] property in the inspector."),
+		gtr("We’ll add a [b]SphereShape3D[/b]. To select a new shape you have to click on [b]<empty>[/b].")
 	])
 	bubble_add_task(
-		(gtr("Add a SphereShape3D.")),
+		(gtr("Add a [b]SphereShape3D[/b].")),
 		1,
 		func task_open_start_scene(task: Task) -> int:
 			var scene_root: Node = EditorInterface.get_edited_scene_root()
@@ -221,6 +226,11 @@ func steps_edit_subscene() :
 				return 1
 			return 0 
 	)
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille/CollisionShape3D")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille/CollisionShape3D"))
+	)
+	mouse_click(1)
 	complete_step()
 	
 	highlight_controls([interface.run_bar_play_button], true)
@@ -229,7 +239,7 @@ func steps_edit_subscene() :
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("In-game check"))
 	bubble_add_text(
-		[gtr("If you place the marble accurately on the track, you should see it follow the path."),]
+		[gtr("If you placed the marble accurately on the track, you should see it follow the path."),]
 	)
 	complete_step()
 
@@ -249,7 +259,7 @@ func steps_script():
 	bubble_set_avatar_at(Bubble.AvatarAt.CENTER)
 	bubble_set_title(gtr("Attach a script to a node"))
 	bubble_add_text(
-		[gtr("Click on the [b]Bille[/b] node, then on \"Attach script\" to access the dedicated menu. From there, browse to the file named [b]ColorChange.gd[/b] (the path should be: [b]res://GameObjects/ColorChange.gd[/b])")]
+		[gtr("Click on the [b]Bille[/b] node, then on [b]Attach script[/b] %s to access the dedicated menu. From there, browse to the file named [b]ColorChange.gd[/b] (the path should be: [b]res://GameObjects/ColorChange.gd[/b])") % bbcode_generate_icon_image_string(ICONS_MAP.add_script_button)]
 	)
 	bubble_add_task(
 		(gtr("Attach the ColorChange script.")),
@@ -278,25 +288,25 @@ func steps_script():
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("The ColorChange class"))
 	bubble_add_text([
-		gtr("You can see this class defines ColorChange which inherits from XRToolsPickable, allowing us to grab the marble in VR."),
-		gtr("The code is written in GDScript an interpreted language resembling python."),
+		gtr("You can see this class defines [b]ColorChange[/b] which inherits from [b]XRToolsPickable[/b], allowing us to grab the marble in VR."),
+		gtr("The code is written in [b]GDScript[/b] which is an interpreted language that looks like python."),
 	])
 	complete_step()
 	
 	highlight_code(7, 14)
-	highlight_code(22, 22)
+	highlight_code(22, 22) #TODO : find a way to scroll back left
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Declare variables"))
 	bubble_add_text([
 		gtr("We can see the color change is hardcoded on line 22."),
-		gtr("Here is an example of declaring a variable of type Color."),
+		gtr("Here is an example of declaring a variable of type [b]Color[/b]."),
 	])
 	bubble_add_code(["var variable_name : Color = Color(1,1,1)"])
 	bubble_add_text([
 		gtr("[b]Declare the two colors as variables at the start of the script.[/b]"),
 		gtr("[b]Replace the hardcoded values with the variables[/b]"),
-		gtr("Don't forget, you have to save with File->Save")
+		gtr("Don't forget, you have to save with [b]File[/b] > [b]Save[/b]")
 	])
 	complete_step()
 	
@@ -306,7 +316,7 @@ func steps_script():
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Inspector accessibility"))
 	bubble_add_text([
-		gtr("In the inspector, when the marble is selected, we can see the Max Speed variable is visible in the editor, but not the color variables we just added."),
+		gtr("In the inspector, when the marble is selected, we can see the [b]Max Speed[/b] variable is visible in the editor, but not the color variables we just added."),
 		gtr("Let’s quickly fix that."),
 	])
 	complete_step()
@@ -317,8 +327,9 @@ func steps_script():
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Add the last code bits"))
 	bubble_add_text([
-		gtr("As seen on the Max Speed line, just add an [b]@export[/b] to make the variable editable in the inspector."),
-		gtr("Don't forget, you have to save with File->Save")
+		gtr("As seen on the [b]Max Speed[/b] line, just add an [b]@export[/b] to make the variable editable in the inspector."),
+		gtr("[b]Add @export in front of your color variables.[/b]"),
+		gtr("Don't forget, you have to save with [b]File[/b] > [b]Save[/b]")
 	])
 	complete_step()
 	
@@ -339,7 +350,7 @@ func steps_script():
 	bubble_set_title(gtr("Final game version"))
 	bubble_add_text(
 		[gtr("If you launch the game one last time, you should be able to grab the marble and see it take on the colors you defined."),
-		gtr("If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this 'Bille' instance.")]
+		gtr("If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this [b]Bille[/b] instance.")]
 	)
 	complete_step()
 

@@ -108,8 +108,8 @@ msgstr ""
 "fonctionnalités.[/center]"
 
 #: tours/vr_tour.gd
-msgid "[center][b]Let’s get started![/b][/center]"
-msgstr "[center][b]C'est parti![/b][/center]"
+msgid "[center][b]Let’s get started ![/b][/center]"
+msgstr "[center][b]C'est parti ![/b][/center]"
 
 #: tours/vr_tour.gd
 msgid "Try the game"
@@ -117,7 +117,7 @@ msgstr "Essayons le jeu"
 
 #: tours/vr_tour.gd
 msgid ""
-"Click the Run button at the top right of the editor to launch the project."
+"Click the Run button % at the top right of the editor to launch the project."
 msgstr ""
 "Appuyez sur le bouton de lancement en haut à droite de l'éditeur afin de "
 "lancer le projet."
@@ -136,8 +136,16 @@ msgid "In this tutorial we will make change in a project containing a marble tra
 msgstr "Le but de ce tutoriel est de modifier un projet dans lequel un circuit pour bille est présent."
 
 #: tours/vr_tour.gd
-msgid "First we will add a marble, then collisions on this marble and finally have an introduction to GDScript will allow us to change the color of this marble depending on its speed."
-msgstr "Dans un premier temps nous y ajouterons une bille, puis on ajoutera des collisions sur cette bille, enfin une introduction au GCScript permettra de modifier la couleur de cette bille en fonction de sa vitesse."
+msgid "First we will add a marble."
+msgstr "Dans un premier temps nous y ajouterons une bille."
+
+#: tours/vr_tour.gd
+msgid "Then we will add collisions on this marble."
+msgstr "Puis on ajoutera des collisions sur cette bille."
+
+#: tours/vr_tour.gd
+msgid "Finally we will have an introduction to GDScript, this will allow us to change the color of this marble depending on its speed."
+msgstr "Enfin une introduction au GDScript permettra de modifier la couleur de cette bille en fonction de sa vitesse."
 
 #: tours/vr_tour.gd
 msgid "View of the current scene"
@@ -156,10 +164,9 @@ msgstr "Représentation de la scène"
 
 #: tours/vr_tour.gd
 msgid ""
-"In the editor, a window displays the various objects present in the current "
-"scene."
+"In the editor, a tab displays the various objects present in the current scene."
 msgstr ""
-"Dans l'éditeur, une fenêtre permet d'afficher les différents objets présents "
+"Dans l'éditeur, un onglet permet d'afficher les différents objets présents "
 "dans la scène actuelle."
 
 #: tours/vr_tour.gd
@@ -176,18 +183,15 @@ msgstr "Instancier une scène enfant"
 
 #: tours/vr_tour.gd
 msgid ""
-"Since we already created the object [i]Bille.tscn[/i], which is also a "
-"scene, we can add it to our main scene [i]main.tscn[/i]."
+"Since the object [i]Bille.tscn[/i] is already created, it can be added to our main scene [i]main.tscn[/i]."
 msgstr ""
-"Comme nous avons déjà créé l'objet [i]Bille.tscn[/i], qui est donc une scène "
-"lui aussi, nous pouvons l'ajouter à notre scène principale [i]main.tscn[/i]."
+"Comme l'objet [i]Bille.tscn[/i] a déjà été créé, nous pouvons l'ajouter à notre scène principale [i]main.tscn[/i]."
 
 #: tours/vr_tour.gd
 msgid ""
-"Click the Circuit node in the scene and then %s 'Instantiate Child Scene' to open the selection window."
+"Click the [b]Circuit[/b] node in the scene and then [b]Instantiate Child Scene[/b] %s to open the selection window."
 msgstr ""
-"Cliquez sur le nœud Circuit de la scène puis sur %s \"Instancier "
-"une scène enfant\" pour accéder à une fenêtre de sélection."
+"Cliquez sur le nœud [b]Circuit[/b] de la scène puis sur [b]Instancier une scène enfant[/b] %s pour accéder à une fenêtre de sélection."
 
 #: addons/godot_tours/tour.gd
 msgid "Instantiate the [b]%s[/b] scene as a child of [b]%s[/b]"
@@ -207,7 +211,7 @@ msgid ""
 "manipulate it in the viewport."
 msgstr ""
 "Maintenant que nous avons ajouté la bille à l'arborescence, il suffit de "
-"clicker dessus pour pouvoir la manipuler dans le viewport."
+"cliquer dessus pour pouvoir la manipuler dans le viewport."
 
 #: tours/vr_tour.gd
 msgid "Alternative method"
@@ -222,12 +226,12 @@ msgstr ""
 "numériquement dans l'inspecteur de la bille."
 
 #: tours/vr_tour.gd
-msgid "Go to Node3D > Transform > Position."
-msgstr "Dans Node3D > Transform > Position."
+msgid "Go to [b]Node3D[/b] > [b]Transform[/b] > [b]Position[/b]."
+msgstr "Dans [b]Node3D[/b] > [b]Transform[/b] > [b]Position[/b]."
 
 #: tours/vr_tour.gd
-msgid "To place it at the top of the circuit, use position (1.2; 1.2; 0)."
-msgstr "Pour la mettre au sommet du circuit la position est (1.2; 1.2; 0)."
+msgid "To place it at the top of the circuit, use position:"
+msgstr "Pour la mettre au sommet du circuit la position est:"
 
 #: tours/vr_tour.gd
 msgid "In-game presence"
@@ -248,7 +252,7 @@ msgid ""
 "To prevent the marble from passing through the ground and other objects in "
 "the scene, we’ll add a collision box."
 msgstr ""
-"Pour éviter que la bille traverse le sol et les autres objets de la scène, "
+"Pour éviter que la bille ne traverse le sol et les autres objets de la scène, "
 "nous allons lui ajouter une boîte de collision."
 
 #: tours/vr_tour.gd
@@ -274,14 +278,14 @@ msgstr ""
 #: tours/vr_tour.gd
 msgid ""
 "By clicking the [b]Open in Editor[/b] icon %s next to the [b]Bille[/b] node, "
-"you’ll be able to open and edit the Bille scene."
+"you’ll be able to open and edit the [b]Bille[/b] scene."
 msgstr ""
 "En appuyant sur l'icône [b]Ouvrir dans l'éditeur[/b] %s à côté du nœud "
-"[b]Bille[/b] nous allons pouvoir accéder et modifier la scène Bille."
+"[b]Bille[/b] nous allons pouvoir accéder et modifier la scène [b]Bille[/b]."
 
 #: tours/vr_tour.gd
-msgid "Open the Bille scene."
-msgstr "Ouvrir la scène Bille."
+msgid "Open the [b]Bille[/b] scene."
+msgstr "Ouvrir la scène [b]Bille[/b]."
 
 #: tours/vr_tour.gd
 msgid "Let’s add the collision"
@@ -289,20 +293,20 @@ msgstr "Ajoutons la collision"
 
 #: tours/vr_tour.gd
 msgid ""
-"If you click on CollisionShape3D, you can see the [b]Shape[/b] property in the "
+"If you click on [b]CollisionShape3D[/b], you can see the [b]Shape[/b] property in the "
 "inspector."
 msgstr ""
-"Si on clique sur CollisionShape3D, on peut voir l'attribut [b]Shape[/b] dans "
+"Si on clique sur [b]CollisionShape3D[/b], on peut voir l'attribut [b]Shape[/b] dans "
 "l'éditeur."
 
 #: tours/vr_tour.gd
-msgid "We’ll add a SphereShape3D. To select a new shape you have to click on [b]<empty>[/b]."
+msgid "We’ll add a [b]SphereShape3D[/b]. To select a new shape you have to click on [b]<empty>[/b]."
 msgstr ""
-"Nous allons ajouter une SphereShape3D. Pour sélectionner la nouvelle forme il faut clicker sur [b]<vide>[/b]"
+"Nous allons ajouter une [b]SphereShape3D[/b]. Pour sélectionner la nouvelle forme il faut cliquer sur [b]<vide>[/b]"
 
 #: tours/vr_tour.gd
-msgid "Add a SphereShape3D."
-msgstr "Ajouter une SphereShape3D."
+msgid "Add a [b]SphereShape3D[/b]."
+msgstr "Ajouter une [b]SphereShape3D[/b]."
 
 #: tours/vr_tour.gd
 msgid "In-game check"
@@ -310,9 +314,9 @@ msgstr "Vérification en jeu"
 
 #: tours/vr_tour.gd
 msgid ""
-"If you place the marble accurately on the track, you should see it follow the path."
+"If you placed the marble accurately on the track, you should see it follow the path."
 msgstr ""
-"Si vous placez la bille correctement sur la piste, vous devriez la voir suivre le "
+"Si vous avez placé la bille correctement sur la piste, vous devriez la voir suivre le "
 "parcours."
 
 #: tours/vr_tour.gd
@@ -331,11 +335,9 @@ msgstr "Attacher un script à un nœud"
 
 #: tours/vr_tour.gd
 msgid ""
-"Click on the [b]Bille[/b] node, then on \"Attach script\" to access the "
-"dedicated menu. From there, browse to the file named [b]ColorChange.gd[/b] "
-"(the path should be: [b]res://GameObjects/ColorChange.gd[/b])"
+"Click on the [b]Bille[/b] node, then on [b]Attach script[/b] %s to access the dedicated menu. From there, browse to the file named [b]ColorChange.gd[/b] (the path should be: [b]res://GameObjects/ColorChange.gd[/b])"
 msgstr ""
-"Cliquez sur le nœud [b]Bille[/b] puis sur \"Attacher un script\" pour "
+"Cliquez sur le nœud [b]Bille[/b] puis sur [b]Attacher un script[/b] %s pour "
 "accéder au menu dédié. Dans celui-ci, on parcourt les fichiers pour trouver "
 "celui portant le nom [b]ColorChange.gd[/b] (le chemin devrait être : "
 "[b]res://GameObjects/ColorChange.gd[/b])"
@@ -374,17 +376,15 @@ msgstr "La classe ColorChange"
 
 #: tours/vr_tour.gd
 msgid ""
-"You can see this class defines ColorChange which inherits from "
-"XRToolsPickable, allowing us to grab the marble in VR."
+"You can see this class defines [b]ColorChange[/b] which inherits from [b]XRToolsPickable[/b], allowing us to grab the marble in VR."
 msgstr ""
-"On peut voir que cette classe défini la classe ColorChange qui hérite de "
-"XRToolsPickable ce qui va nous permettre d'attraper la bille en VR."
+"On peut voir que cette classe défini la classe [b]ColorChange[/b] qui hérite de [b]XRToolsPickable[/b] ce qui va nous permettre d'attraper la bille en VR."
 
 #: tours/vr_tour.gd
 msgid ""
-"The code is written in GDScript an interpreted language resembling python."
+"The code is written in [b]GDScript[/b] which is an interpreted language that looks like python."
 msgstr ""
-"Le code est écrit dans en GDScript un langage interprété ressemblant à du python."
+"Le code est écrit en [b]GDScript[/b] qui est un langage interprété ressemblant à du python."
 
 #: tours/vr_tour.gd
 msgid "Declare variables"
@@ -396,8 +396,8 @@ msgstr ""
 "On peut voir que le changement de couleur a été codé en dur à la ligne 22."
 
 #: tours/vr_tour.gd
-msgid "Here is an example of declaring a variable of type Color."
-msgstr "Voici un exemple de déclaration de variable de type Color."
+msgid "Here is an example of declaring a variable of type [b]Color[/b]."
+msgstr "Voici un exemple de déclaration de variable de type [b]Color[/b]."
 
 #: tours/vr_tour.gd
 msgid "[b]Declare the two colors as variables at the start of the script.[/b]"
@@ -409,8 +409,8 @@ msgid "[b]Replace the hardcoded values with the variables[/b]"
 msgstr "[b]Remplacez les valeurs codées en dur par les variables [/b]"
 
 #: tours/vr_tour.gd
-msgid "Don't forget, you have to save with File->Save"
-msgstr "N'oubliez pas de sauvegarder avec Fichier->Enregistrer"
+msgid "Don't forget, you have to save with [b]File[/b] > [b]Save[/b]"
+msgstr "N'oubliez pas de sauvegarder avec [b]Fichier[/b] > [b]Enregistrer[/b]"
 
 #: tours/vr_tour.gd
 msgid "Inspector accessibility"
@@ -418,12 +418,11 @@ msgstr "Accessibilité dans l'inspecteur"
 
 #: tours/vr_tour.gd
 msgid ""
-"In the inspector, when the marble is selected, we can see the Max Speed "
+"In the inspector, when the marble is selected, we can see the [b]Max Speed[/b] "
 "variable is visible in the editor, but not the color variables we just added."
 msgstr ""
 "Dans l'inspecteur, quand notre bille est sélectionnée, on voit que sa "
-"variable Max Speed est accessible dans l'éditeur mais pas les couleurs que "
-"nous venons de mettre."
+"variable [b]Max Speed[/b] est accessible dans l'éditeur mais les couleurs que nous venons de mettre ne le sont pas."
 
 #: tours/vr_tour.gd
 msgid "Let’s quickly fix that."
@@ -435,11 +434,14 @@ msgstr "Ajouter les derniers morceaux de codes"
 
 #: tours/vr_tour.gd
 msgid ""
-"As seen on the Max Speed line, just add an [b]@export[/b] to make the "
-"variable editable in the inspector."
+"As seen on the [b]Max Speed[/b] line, just add an [b]@export[/b] to make the variable editable in the inspector."
 msgstr ""
-"Comme on peut le voir sur la ligne déclarant Max Speed, il suffit de "
+"Comme on peut le voir sur la ligne déclarant [b]Max Speed[/b], il suffit de "
 "rajouter un [b]@export[/b] pour rendre la variable accessible dans l'éditeur."
+
+#: tours/vr_tour.gd
+msgid "[b]Add @export in front of your color variables.[/b]"
+msgstr "[b]Ajouter @export devant vos variables de couleurs.[/b]"
 
 #: tours/vr_tour.gd
 msgid "You can now edit the colors freely from the inspector."
@@ -460,8 +462,8 @@ msgstr ""
 "bille et la voir prendre les couleurs que vous avez défini précédemment."
 
 #: tours/vr_tour.gd
-msgid "If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this 'Bille' instance."
-msgstr "Si la color que vous avez mise n'apparait pas, tentez de revenir à la scène [b]main[/b] et regardez les valeurs des variables de l'instance de 'Bille'"
+msgid "If the color you set does not appear, try to go back to the [b]main[/b] scene and check the variable values of this [b]Bille[/b] instance."
+msgstr "Si la couleur que vous avez mise n'apparait pas, tentez de revenir à la scène [b]main[/b] et regardez les valeurs des variables de l'instance de [b]Bille[/b]"
 
 #: tours/vr_tour.gd
 msgid "What you’ve built"
