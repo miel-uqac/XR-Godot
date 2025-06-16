@@ -32,14 +32,6 @@ msgid "END TOUR AND CONTINUE LEARNING"
 msgstr "FIN DU TOUR ET CONTINUER A APPRENDRE"
 
 #: addons/godot_tours/bubble/default_bubble.gd
-msgid "NO"
-msgstr "NON"
-
-#: addons/godot_tours/bubble/default_bubble.gd
-msgid "YES"
-msgstr "OUI"
-
-#: addons/godot_tours/bubble/default_bubble.gd
 msgid "Close the tour?"
 msgstr "Fermer le tour?"
 
@@ -54,10 +46,6 @@ msgstr "[u]Aide[u]"
 #: addons/godot_tours/bubble/default_bubble.gd
 msgid "[right][u]Skip[/u][/right]"
 msgstr "[right][u]Passer[/u][/right]"
-
-#: addons/godot_tours/bubble/default_bubble.gd
-msgid "[u]Help[u]"
-msgstr "[u]Aide[u]"
 
 #: addons/godot_tours/bubble/default_bubble.gd
 msgid "SKIP STEP"

@@ -1,6 +1,5 @@
 {
 	"BaseButton": {
-		"button_up": false,
 		"pressed": true
 	},
 	"ColorPickerButton": {
