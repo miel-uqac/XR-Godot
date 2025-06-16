@@ -105,9 +105,9 @@ msgstr "Essayons le jeu"
 
 #: tours/vr_tour.gd
 msgid ""
-"Click the Run button % at the top right of the editor to launch the project."
+"Click the Run button %s at the top right of the editor to launch the project."
 msgstr ""
-"Appuyez sur le bouton de lancement en haut à droite de l'éditeur afin de "
+"Appuyez sur le bouton %s de lancement en haut à droite de l'éditeur afin de "
 "lancer le projet."
 
 #: tours/vr_tour.gd

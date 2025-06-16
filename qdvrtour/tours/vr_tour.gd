@@ -80,7 +80,7 @@ func steps_intro() -> void:
 	bubble_add_task_press_button(interface.run_bar_play_button)
 	bubble_set_title(gtr("Try the game"))
 	bubble_add_text(
-		[gtr("Click the Run button % at the top right of the editor to launch the project.") % bbcode_generate_icon_image_string(ICONS_MAP.play_button),
+		[gtr("Click the Run button %s at the top right of the editor to launch the project.") % bbcode_generate_icon_image_string(ICONS_MAP.play_button),
 		gtr("Then, press [b]%s[/b] or close the game window to stop it.") % shortcuts.stop]
 	)
 	complete_step()
@@ -294,6 +294,7 @@ func steps_script():
 	])
 	complete_step()
 	
+	context_set_script()
 	highlight_code(4, 5)
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.BOTTOM_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
@@ -304,6 +305,7 @@ func steps_script():
 	])
 	complete_step()
 	
+	context_set_script()
 	highlight_code(7, 14)
 	highlight_code(22, 22) #TODO : find a way to scroll back left
 	highlight_code(8, 8)
