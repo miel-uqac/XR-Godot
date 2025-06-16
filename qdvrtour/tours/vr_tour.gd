@@ -270,6 +270,17 @@ func steps_script():
 			else:
 				return 0
 	)
+
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille"))
+	)
+	mouse_click(1)
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille")),
+		get_control_global_center.bind(interface.scene_dock_attach_script_button)
+	)
+	mouse_click(1)
 	complete_step()
 
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_LEFT)
@@ -295,6 +306,7 @@ func steps_script():
 	
 	highlight_code(7, 14)
 	highlight_code(22, 22) #TODO : find a way to scroll back left
+	highlight_code(8, 8)
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Declare variables"))
