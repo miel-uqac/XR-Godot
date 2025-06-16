@@ -20,6 +20,8 @@ var log_count : int = 0
 
 var print_to_console : bool = false
 
+var has_started : bool = false
+
 func get_file_count_in_folder(path: String) -> int:
 	var dir := DirAccess.open(path)
 	if not dir:
@@ -44,6 +46,7 @@ func on_editor_ready():
 	_load_signal_config()
 	add_control_to_bottom_panel(log_dock, "Editor Logger")
 	get_tree().connect("node_added", _on_node_added)
+	record_button.emit_signal("pressed")
 	pass
 
 func _exit_tree():
@@ -55,7 +58,7 @@ func _exit_tree():
 var editor_classes : Dictionary
 
 func _on_record_button_toggled():
-	is_recording = record_button.button_pressed
+	is_recording = !is_recording
 	if is_recording:
 		recording_start_time = Time.get_ticks_msec() / 1000.0
 		log_count = get_file_count_in_folder(log_folder_path)
@@ -281,9 +284,15 @@ func _on_signal_logged(arg1: Variant=null, arg2: Variant=null, arg3: Variant=nul
 	var node : Node = arg3
 	
 	var timestamp = _format_timestamp()
-	log_to_file(timestamp + ";" + _class_name + ";" + signal_name + ";" + node.name + ";" + get_node_name(node))
-	if print_to_console :
-		print("[" + timestamp + "]" + "[" + _class_name + "] " + signal_name + " : " + node.name + " : " + get_node_name(node))
+	
+	if node.name == "ButtonStartLearning" :
+		has_started = true
+		recording_start_time = Time.get_ticks_msec() / 1000.0
+	
+	if has_started :
+		log_to_file(timestamp + ";" + _class_name + ";" + signal_name + ";" + node.name + ";" + get_node_name(node))
+		if print_to_console :
+			print("[" + timestamp + "]" + "[" + _class_name + "] " + signal_name + " : " + node.name + " : " + get_node_name(node))
 
 func log_to_file(text: String):
 	var file := FileAccess.open(log_folder_path + "log_" + str(log_count) + ".csv", FileAccess.READ_WRITE)
