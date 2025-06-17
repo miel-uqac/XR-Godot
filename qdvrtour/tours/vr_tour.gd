@@ -171,6 +171,8 @@ func steps_add_child() -> void:
 	bubble_add_text(
 		[gtr("If you run the game again, you will not see the marble, the reason is simple it fell through the ground. during the game loading."),]
 	)
+	bubble_add_text([gtr("[b]Be aware that without a collision shape the marble will pass through the ground, you probably won't see it. [/b]")])
+
 	complete_step()
 
 func steps_edit_subscene() :

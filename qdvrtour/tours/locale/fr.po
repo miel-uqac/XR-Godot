@@ -232,6 +232,10 @@ msgstr ""
 "Si on relance le jeu on ne voit pas la bille, la raison est simple, elle est passée à travers le sol le temps que le jeu charge."
 
 #: tours/vr_tour.gd
+msgid "[b]Be aware that without a collision shape the marble will pass through the ground, you probably won't see it. [/b]"
+msgstr "[b] Soyez conscient que sans collision la bille va passer à travers le sol, vous ne la verrez pas. [/b]"
+
+#: tours/vr_tour.gd
 msgid "Add a collision"
 msgstr "Ajouter une collision"
 
