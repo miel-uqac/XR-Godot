@@ -24,6 +24,9 @@ func _physics_process(_delta: float) -> void:
 
 
 
+#Fonction utilisée pour faire le lerp entre les deux couleurs
 func color_lerp(color1 : Color, color2 : Color, interp : float) -> Color :
+	#On va construire la nouvelle couleur en format hsv en faisant des lerp 
 	var new_color = Vector3(color1.h, color1.s, color1.v).lerp(Vector3(color2.h, color2.s, color2.v), interp)
+	#On converti ce vecteur hsv en objet couleur
 	return Color.from_hsv(new_color.x, new_color.y, new_color.z)
