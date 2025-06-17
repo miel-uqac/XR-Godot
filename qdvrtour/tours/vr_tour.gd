@@ -307,7 +307,7 @@ func steps_script():
 	
 	context_set_script()
 	highlight_code(7, 14)
-	highlight_code(22, 22) #TODO : find a way to scroll back left
+	highlight_code(22, 23)
 	highlight_code(8, 8)
 	bubble_move_and_anchor(interface.inspector_dock, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
