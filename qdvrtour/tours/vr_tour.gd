@@ -353,6 +353,29 @@ func steps_script():
 	highlight_controls([interface.inspector_dock])
 	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
 	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
+	bubble_set_title(gtr("Minor detail"))
+	bubble_add_text([
+		gtr("In order to see a change on the editor you have to reload the node."),
+		gtr("To do that just click on another node and back on the first node."),
+	])
+	highlight_scene_nodes_by_name(["Bille","CollisionShape3D"])
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille/CollisionShape3D")),
+	)
+	mouse_click(1)
+	mouse_move_by_callable(
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille/CollisionShape3D")),
+		get_tree_item_center_by_path.bind(interface.scene_tree, ("Bille")),
+	)
+	mouse_click(1)
+	complete_step()
+	
+	
+	context_set_3d()
+	highlight_controls([interface.inspector_dock])
+	bubble_move_and_anchor(interface.canvas_item_editor, Bubble.At.TOP_RIGHT)
+	bubble_set_avatar_at(Bubble.AvatarAt.LEFT)
 	bubble_set_title(gtr("Inspector accessibility"))
 	bubble_add_text([
 		gtr("You can now edit the colors freely from the inspector."),

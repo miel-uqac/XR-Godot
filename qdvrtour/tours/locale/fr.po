@@ -404,6 +404,20 @@ msgstr "[b]Remplacez les valeurs codées en dur par les variables [/b]"
 msgid "Don't forget, you have to save with [b]File[/b] > [b]Save[/b]"
 msgstr "N'oubliez pas de sauvegarder avec [b]Fichier[/b] > [b]Enregistrer[/b]"
 
+
+#: tours/vr_tour.gd
+msgid "Minor detail"
+msgstr "Detail mineur"
+
+#: tours/vr_tour.gd
+msgid "In order to see a change on the editor you have to reload the node."
+msgstr "Pour pouvoir voir un changement dans l'éditeur vous devez recharger le noeud."
+
+#: tours/vr_tour.gd
+msgid "To do that just click on another node and back on the first node."
+msgstr "Pour le recharger cliquer sur un autre noeud puis sur le noeud à actualiser."
+
+
 #: tours/vr_tour.gd
 msgid "Inspector accessibility"
 msgstr "Accessibilité dans l'inspecteur"
