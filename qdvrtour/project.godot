@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GdVrTour"
 run/main_scene="uid://d0pbwebxsvho0"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/image="uid://chhrwh08k1s7m"
 config/icon="res://icon.svg"
 

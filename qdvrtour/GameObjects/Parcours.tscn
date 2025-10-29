@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjba7kqpxi506"]
+[gd_scene load_steps=8 format=3 uid="uid://bjba7kqpxi506"]
 
 [ext_resource type="PackedScene" uid="uid://crvndq8ra826t" path="res://GameObjects/Circuit-Parts/Helix.tscn" id="1_ipgky"]
 [ext_resource type="PackedScene" uid="uid://c7dg1rd1f0vt5" path="res://GameObjects/Circuit-Parts/Ramp.tscn" id="2_s8a32"]
@@ -7,46 +7,88 @@
 [ext_resource type="PackedScene" uid="uid://c74a21f3eyuyc" path="res://GameObjects/Circuit-Parts/Slope.tscn" id="5_db1km"]
 [ext_resource type="PackedScene" uid="uid://f6jmls37oud6" path="res://GameObjects/Circuit-Parts/Curve.tscn" id="6_qbv30"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjpry"]
+
 [node name="Parcours" type="Node3D"]
 
 [node name="Slope3" parent="." instance=ExtResource("5_db1km")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.9525, 3.77538, 6.80763)
 
 [node name="s-curve-R-Large" parent="." instance=ExtResource("3_le1ri")]
-transform = Transform3D(0.0668042, -0.173717, 0.982527, 0.0068752, 0.984784, 0.173648, -0.997743, -0.00484535, 0.066982, 9.73294, 3.33012, 4.13845)
+transform = Transform3D(0.06705016, -0.12812117, 0.98948914, 0.003787365, 0.991747, 0.1281563, -0.997743, -0.0048453487, 0.06698199, 9.73294, 3.4694395, 4.142286)
 
 [node name="ramp" parent="." instance=ExtResource("2_s8a32")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.41044, 2.50662, 1.41467)
+transform = Transform3D(-4.37114e-08, 0, 1.2134309, 0, 1, 0, -1, 0, -5.304076e-08, 6.612928, 2.9088302, 1.4804943)
 
 [node name="helix" parent="." instance=ExtResource("1_ipgky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41044, 0.506625, -1.09088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41044, 0.9031196, -1.0230116)
 
 [node name="Slope4" parent="." instance=ExtResource("5_db1km")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.44028, -0.986677, 1.41199)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.44028, -0.59036416, 1.4793327)
 
 [node name="s-curve-R-Large2" parent="." instance=ExtResource("3_le1ri")]
-transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, 1.15964, -1.49795, -1.09726)
+transform = Transform3D(-4.263442e-08, -0.38663036, 0.9222349, -9.643273e-09, 0.9222349, 0.38663036, -1, 7.590401e-09, -4.30473e-08, 1.3815323, -1.4905653, -1.020638)
 
 [node name="S-Curve" parent="." instance=ExtResource("4_le1ri")]
-transform = Transform3D(-4.37114e-08, -0.173648, 0.984808, 0, 0.984808, 0.173648, -1, 7.5904e-09, -4.30473e-08, -2.56328, -2.73155, -2.11858)
+transform = Transform3D(0.022006782, -0.17360596, 0.98456955, -6.513506e-16, 0.984808, 0.17364801, -0.9997578, -0.0038214335, 0.021672456, -2.11465, -3.4818773, -2.0530138)
 
 [node name="Slope" parent="." instance=ExtResource("5_db1km")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.08258, -4.53368, -0.613707)
+transform = Transform3D(0.022006782, 0, 0.9997578, 0, 1, 0, -0.9997578, 0, 0.022006782, -4.5826473, -5.214836, -0.59190726)
 
 [node name="Curve" parent="." instance=ExtResource("6_qbv30")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.05475, -4.55668, -1.10759)
+transform = Transform3D(-0.022006867, 0, -0.9997578, 0, 1, 0, 0.9997578, 0, -0.022006867, -6.5433393, -5.210885, -1.1350517)
 
 [node name="Curve2" parent="." instance=ExtResource("6_qbv30")]
-transform = Transform3D(-0.984808, 0.173648, -8.74228e-08, 0.173648, 0.984808, 0, 8.60946e-08, -1.51808e-08, -1, -7.13518, -4.676, -3.10673)
+transform = Transform3D(-0.99975806, 0, 0.022006912, 0, 1.0000002, 0, -0.022006918, 0, -0.9997578, -6.4931955, -5.212022, -3.1147838)
 
 [node name="s-curve-R-Large3" parent="." instance=ExtResource("3_le1ri")]
-transform = Transform3D(-4.37114e-08, 0.173648, 0.984808, 0, 0.984808, -0.173648, -1, -7.5904e-09, -4.30473e-08, -3.70418, -5.37582, -1.12186)
+transform = Transform3D(0.022006782, 0.17360596, 0.98456955, 6.513506e-16, 0.984808, -0.17364801, -0.9997578, 0.0038214335, 0.021672456, -3.2105489, -5.6317377, -1.043596)
 
 [node name="Slope2" parent="." instance=ExtResource("5_db1km")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.255339, -7.52404, 1.34806)
+transform = Transform3D(-0.022006867, 0, -0.9997578, 0, 1, 0, 0.9997578, 0, -0.022006867, 0.45342684, -8.294699, 1.600587)
 
 [node name="helix2" parent="." instance=ExtResource("1_ipgky")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.738031, -9.91812, 3.84799)
+transform = Transform3D(-0.9997578, 0, 0.022006737, 0, 1, 0, -0.022006737, 0, -0.9997578, 1.753603, -10.584728, 4.119612)
 
 [node name="Curve3" parent="." instance=ExtResource("6_qbv30")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7174, -9.91506, 1.8449)
+transform = Transform3D(0.022753095, -0.00023909356, 0.9997411, 0.0871556, 0.9961932, -0.0017453283, -0.99593484, 0.08717275, 0.022687316, 2.6936185, -10.642943, 2.1075158)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, 11.364001, -4.223729, 6.5676413)
+height = 9.930939
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, 7.168497, -5.4929795, 0.90985537)
+height = 8.344376
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, 0.724143, -6.9260426, -2.8086085)
+height = 6.553047
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, -1.7319007, -7.753902, -2.8882656)
+height = 5.518223
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, -6.783226, -8.642051, -2.8882656)
+height = 4.408037
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, -0.24335182, -9.474983, 1.5557224)
+height = 3.3668718
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, 4.16809, -10.582606, 4.1230125)
+height = 1.982343
+material = SubResource("StandardMaterial3D_tjpry")
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1.6, 0, 0, 0, 0.5, -0.7072861, -11.105036, 4.1230125)
+height = 1.3293062
+material = SubResource("StandardMaterial3D_tjpry")
