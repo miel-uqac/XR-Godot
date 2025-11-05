@@ -51,7 +51,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161214, 0.429622)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 1.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.9999999, 0, 1.8, 0)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0092481375, -5.9604645e-08,
 mesh = SubResource("BoxMesh_ofq8x")
 
 [node name="Parcours" parent="." instance=ExtResource("6_efxa6")]
-transform = Transform3D(0.1, 0, 0, 0, 0.08, 0, 0, 0, 0.1, -0.133, 0.759037, -0.676)
+transform = Transform3D(0.1, 0, 0, 0, 0.08, 0, 0, 0, 0.1, -0.133, 0.852229, -0.676)
 
 [node name="Box" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13976343, -0.16862984, -0.13114578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22258468, -0.12287292, 0.3399829)
