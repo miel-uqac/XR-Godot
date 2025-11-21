@@ -111,9 +111,19 @@ msgstr ""
 "lancer le projet."
 
 #: tours/vr_tour.gd
-msgid "Then, press [b]%s[/b] or close the game window to stop it."
+msgid "Then:"
 msgstr ""
-"Ensuite, appuyez sur [b]%s[/b] ou fermer la fenêtre du jeu pour l'arrêter."
+"Ensuite:"
+
+#: tours/vr_tour.gd
+msgid "-On Windows press [b]%s[/b] or close the game window to stop it."
+msgstr ""
+"-Sur Windows appuyez sur [b]%s[/b] ou fermez la fenêtre du jeu pour l'arrêter."
+
+#: tours/vr_tour.gd
+msgid "-On Headset press Meta button and close the game window."
+msgstr ""
+"-Dans le Casque appuyez sur le bouton Meta et fermez la fenêtre du jeu."
 
 #: tours/vr_tour.gd
 msgid "Let's add a marble"

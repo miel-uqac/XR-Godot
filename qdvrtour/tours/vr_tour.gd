@@ -81,7 +81,10 @@ func steps_intro() -> void:
 	bubble_set_title(gtr("Try the game"))
 	bubble_add_text(
 		[gtr("Click the Run button %s at the top right of the editor to launch the project.") % bbcode_generate_icon_image_string(ICONS_MAP.play_button),
-		gtr("Then, press [b]%s[/b] or close the game window to stop it.") % shortcuts.stop]
+		gtr("Then:"),
+		gtr("-On Windows press [b]%s[/b] or close the game window to stop it.") % shortcuts.stop,
+	  	gtr("-On Headset press Meta button and close the game window.")]
+
 	)
 	complete_step()
 
