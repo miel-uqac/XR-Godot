@@ -41,4 +41,5 @@ renderer/rendering_method.mobile="gl_compatibility"
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="uid://dboctp30nsu4m"
 shaders/enabled=true
