@@ -7,7 +7,6 @@
 script = ExtResource("2_entry")
 title = "Un guide sur Godot VR"
 is_free = true
-is_locked = false
 tour_path = "res://tours/vr_tour.gd"
 
 [resource]
