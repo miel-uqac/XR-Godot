@@ -1,21 +1,9 @@
 # XR-Godot
 
-## Lien vers le wiki
+## Documentation (Wiki)
 https://github.com/miel-uqac/XR-Godot/wiki
 
-## Dépôt GitHub
-https://github.com/miel-uqac/XR-Godot
-
-## Créateur / Auteurs
-- Camille Ordonneau  
-- Kévin Herman  
-- Lucas Zorman  
-- Maxime Jingeaux  
-- Timéo Franville  
-
-**Superviseurs** : Damien Brun, Hamdi Ben Abdessalem
-
-## Licence
+## License
 
 MIT License
 
@@ -38,6 +26,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
 SOFTWARE.
+
 ## Contributors
 
 Alphabetical order
